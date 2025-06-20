@@ -1,6 +1,6 @@
 import { webData } from "../../dataController";
 import { Button } from "../../components/button";
-import '../../index.css'
+
 export const HomeScreen = () => {
   return (
     <>
