@@ -1,65 +1,56 @@
-// src/components/Button.stories.tsx
-import type { Meta, StoryObj } from '@storybook/react';
-import { Button } from './button';
+import type { Meta, StoryObj } from "@storybook/react";
+import { Button } from "./button";
+import { ArrowRight, ArrowLeft } from "lucide-react";
 
 const meta: Meta<typeof Button> = {
-  title: 'Components/Button',
+  title: "Atoms/Button",
   component: Button,
-  tags: ['autodocs'],
+  tags: ["autodocs"],
   argTypes: {
-    onClick: { action: 'clicked' },
-    variant: {
-      control: 'select',
-      options: ['primary', 'secondary', 'danger'],
-    },
-    size: {
-      control: 'select',
-      options: ['sm', 'md', 'lg'],
-    },
+    label: { control: "text" },
+    size: { control: "radio", options: ["sm", "md", "lg"] },
+    disabled: { control: "boolean" },
+    borderRadius: { control: "text" },
+    iconPosition: { control: "radio", options: ["left", "right"] },
   },
 };
 
 export default meta;
+
 type Story = StoryObj<typeof Button>;
 
-export const Primary: Story = {
+export const Default: Story = {
   args: {
-    label: 'Primary Button',
-    variant: 'primary',
+    label: "Click Me",
   },
 };
 
-export const Secondary: Story = {
+export const WithRightIcon: Story = {
   args: {
-    label: 'Secondary Button',
-    variant: 'secondary',
+    label: "Next",
+    icon: <ArrowRight size={16} />,
+    iconPosition: "right",
   },
 };
 
-export const Danger: Story = {
+export const WithLeftIcon: Story = {
   args: {
-    label: 'Danger Button',
-    variant: 'danger',
+    label: "Back",
+    icon: <ArrowLeft size={16} />,
+    iconPosition: "left",
+  },
+};
+
+export const CustomRadius: Story = {
+  args: {
+    label: "Rounded",
+    borderRadius: "50px",
   },
 };
 
 export const Disabled: Story = {
   args: {
-    label: 'Disabled Button',
-    variant: 'primary',
+    label: "Can't Click",
     disabled: true,
-  },
-};
-
-export const Sizes: Story = {
-  render: (args) => (
-    <div className="flex flex-col gap-4">
-      <Button {...args} size="sm" label="Small" />
-      <Button {...args} size="md" label="Medium" />
-      <Button {...args} size="lg" label="Large" />
-    </div>
-  ),
-  args: {
-    variant: 'primary',
   },
 };
