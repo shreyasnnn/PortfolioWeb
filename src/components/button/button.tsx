@@ -2,46 +2,33 @@ import React from "react";
 import classNames from "classnames";
 
 export type ButtonProps = {
-  label: string;
-  size?: "sm" | "md" | "lg";
-  disabled?: boolean;
-  onClick?: () => void;
-  borderRadius?: string;
-  icon?: React.ReactNode;
-  iconPosition?: "left" | "right";
-};
+  variant?: "black" | "white" | "empty";
+  children?: React.ReactNode;
+  className?: string;
+} & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
-const sizeClasses: Record<NonNullable<ButtonProps["size"]>, string> = {
-  sm: "px-3 py-1 text-sm",
-  md: "px-4 py-2 text-base",
-  lg: "px-5 py-3 text-lg",
-};
-
-export const Button: React.FC<ButtonProps> = ({
-  label,
-  size = "md",
-  disabled = false,
-  onClick,
-  borderRadius = "2rem",
-  icon,
-  iconPosition = "right",
-}) => {
-  const radiusClass = `rounded-[${borderRadius}]`;
+export function Button({
+  variant = "black",
+  children,
+  className = "",
+  ...props
+}: ButtonProps) {
+  const variantClasses = {
+    black: "bg-black text-white",
+    white: "bg-white text-black border border-gray-300",
+    empty: "bg-transparent text-inherit",
+  };
 
   return (
     <button
       className={classNames(
-        "inline-flex items-center justify-center gap-2 focus:outline-none transition bg-button text-light",
-        sizeClasses[size],
-        radiusClass,
-        { "opacity-50 cursor-not-allowed": disabled }
+        "inline-flex items-center justify-center gap-2 px-4 py-2 transition disabled:opacity-50 disabled:cursor-not-allowed",
+        variantClasses[variant],
+        className
       )}
-      onClick={onClick}
-      disabled={disabled}
+      {...props}
     >
-      {icon && iconPosition === "left" && <span>{icon}</span>}
-      <span>{label}</span>
-      {icon && iconPosition === "right" && <span>{icon}</span>}
+      {children}
     </button>
   );
-};
+}
