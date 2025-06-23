@@ -9,7 +9,7 @@ const config: Config = {
         heading: ['Poppins', 'sans-serif'],
       },
       colors: {
-        primary: '#eae9fc',
+        primary: '#d7e0df',
         button: '#211f27',
         fill01: '#fefeff',
         fill02: '#a4a6f5',
@@ -23,7 +23,7 @@ const config: Config = {
         light: '#F9FAFB',
       },
       boxShadow: {
-        card: '0 4px 20px rgba(0, 0, 0, 0.08)',
+        card: '0 4px 20px rgba(0, 0, 0, 0.3)',
       },
       fontSize: {
         xs: '0.75rem',

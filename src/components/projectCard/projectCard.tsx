@@ -30,7 +30,7 @@ export default function ProjectCard({
         </h2>
         <p >{subtitle}</p>
         <div className="mt-4">
-          <Button label="View Project" size="md" icon={<ArrowRightIcon />} />
+          <Button><ArrowRightIcon /></Button>
         </div>
       </div>
     </div>
