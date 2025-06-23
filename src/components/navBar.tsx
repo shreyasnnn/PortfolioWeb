@@ -1,6 +1,10 @@
 import { useState } from "react";
-import { ArrowUpIcon } from "lucide-react";
+import { LinkedinIcon} from "../assets/icons/linkedinIcon"
 import { Button } from "./button";
+import { GithubIcon } from "../assets/icons/githubIcon";
+import { GmailIcon } from "../assets/icons/gmailIcon";
+import { CallIocn } from "../assets/icons/callIcon";
+import shreyasPhoto from'../assets/images/Passport-size-photo-shreyas.jpg'
 
 export default function NavBar() {
   const [onMouseEnter, setOnMouseEnter] = useState(false);
@@ -13,7 +17,7 @@ export default function NavBar() {
           className="rounded-full p-0 shadow-card h-20 w-20"
         >
           <img
-            src="https://img.freepik.com/free-vector/tiktok-profile-picture-template_742173-4482.jpg?semt=ais_hybrid&w=740"
+            src={shreyasPhoto}
             className="rounded-full"
           />
         </Button>
@@ -57,26 +61,30 @@ export default function NavBar() {
           <Button
             variant="secondary"
             className="rounded-xl h-16 shadow-card border-0"
+            onClick={()=>{window.location.href = 'https://www.linkedin.com/in/shreyas-n-4837a2257/'}}
           >
-            <ArrowUpIcon />
+            <LinkedinIcon height={30}/>
           </Button>
           <Button
             variant="secondary"
             className="rounded-xl h-16 shadow-card border-0"
+            onClick={()=>{window.location.href = 'https://github.com/shreyasnnn'}}
           >
-            <ArrowUpIcon />
+            <GithubIcon height={30}/>
           </Button>
           <Button
             variant="secondary"
             className="rounded-xl h-16 shadow-card border-0"
+            onClick={()=>{window.location.href = 'https://mailto:nshreyas1309@gmail.com'}}
           >
-            <ArrowUpIcon />
+            <GmailIcon height={30}/>
           </Button>
           <Button
             variant="secondary"
             className="rounded-xl h-16 shadow-card border-0"
+            onClick={()=>{window.location.href = 'tel:+9134567890'}}
           >
-            <ArrowUpIcon />
+            <CallIocn height={30}/>
           </Button>
         </div>
       </div>
