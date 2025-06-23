@@ -2,14 +2,14 @@ import { useState } from "react";
 import { ArrowUpIcon } from "lucide-react";
 import { Button } from "./button";
 
-export default function Index() {
+export default function NavBar() {
   const [onMouseEnter, setOnMouseEnter] = useState(false);
 
   return (
     <div className="w-full flex justify-center mt-10">
       <div className="flex flex-row gap-6 items-center">
         <Button
-          variant="white"
+          variant="secondary"
           className="rounded-full p-0 shadow-card h-20 w-20"
         >
           <img
@@ -47,7 +47,7 @@ export default function Index() {
         </a>
 
         <Button
-          variant="white"
+          variant="secondary"
           className="rounded-xl h-16 shadow-card border-0"
         >
           🟢 Resume
@@ -55,25 +55,25 @@ export default function Index() {
 
         <div className="flex flex-row gap-2 ml-3">
           <Button
-            variant="white"
+            variant="secondary"
             className="rounded-xl h-16 shadow-card border-0"
           >
             <ArrowUpIcon />
           </Button>
           <Button
-            variant="white"
+            variant="secondary"
             className="rounded-xl h-16 shadow-card border-0"
           >
             <ArrowUpIcon />
           </Button>
           <Button
-            variant="white"
+            variant="secondary"
             className="rounded-xl h-16 shadow-card border-0"
           >
             <ArrowUpIcon />
           </Button>
           <Button
-            variant="white"
+            variant="secondary"
             className="rounded-xl h-16 shadow-card border-0"
           >
             <ArrowUpIcon />

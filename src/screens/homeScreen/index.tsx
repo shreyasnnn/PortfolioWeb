@@ -1,4 +1,4 @@
-import ProfileBar from '../../components/profileBar'
+import ProfileBar from '../../components/navBar'
 
 export const HomeScreen = () => {
   return (

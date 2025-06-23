@@ -2,20 +2,20 @@ import React from "react";
 import classNames from "classnames";
 
 export type ButtonProps = {
-  variant?: "black" | "white" | "empty";
+  variant?: "primary" | "secondary" | "empty";
   children?: React.ReactNode;
   className?: string;
 } & React.ButtonHTMLAttributes<HTMLButtonElement>;
 
 export function Button({
-  variant = "black",
+  variant = "primary",
   children,
   className = "",
   ...props
 }: ButtonProps) {
   const variantClasses = {
-    black: "bg-black text-white",
-    white: "bg-white text-black border border-gray-300",
+    primary: "bg-black text-white",
+    secondary: "bg-white text-black border border-gray-300",
     empty: "bg-transparent text-inherit",
   };
 
