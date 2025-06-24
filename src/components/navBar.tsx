@@ -53,6 +53,7 @@ export default function NavBar() {
         <Button
           variant="secondary"
           className="rounded-xl h-16 shadow-card border-0"
+          onClick={()=>{window.location.href='https://drive.google.com/file/d/1ea481adLfFlJGPaHzV8FapbknrngB6Ou/view?usp=sharing'}}
         >
           🟢 Resume
         </Button>

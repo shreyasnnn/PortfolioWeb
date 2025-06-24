@@ -1,31 +1,27 @@
+import React from "react";
+import classNames from "classnames";
+import {CircleCheckIcon} from '../../assets/icons/circleCheckIcon';
 
-type SlideItemProps = {
-  src: string;
-  bgColor?: string;
-  width?: string;
-  height?: string;
-};
+type SlideCardProps = {
+  text: string;
+  children?: React.ReactNode;
+  className?: string;
+} & React.HTMLAttributes<HTMLDivElement>; // 👈 Use div attributes since you're rendering a <div>
 
-export default function SlideItem({
-  src,
-  bgColor = "fill02",
-  width = "45%",
-  height = "100%",
-}: SlideItemProps) {
+export function SlideItem({
+  text,
+  children,
+  className = "",
+  ...props
+}: SlideCardProps) {
   return (
-    
-        <div
-      className="flex flex-col items-center justify-start rounded-3xl shadow-card overflow-hidden shrink-0 p-8"
-      style={{
-        backgroundColor: bgColor,
-        width,
-        height,
-      }}
+    <div
+      className={classNames("flex flex-row items-center gap-2 p-2 w-fit", className)}
+      {...props}
     >
-      <img
-        src={src}
-        className="w-full h-full object-cover rounded-2xl"
-      />
+      <CircleCheckIcon height={20} fill="grey"/>
+      <span>{text}</span>
+      {children}
     </div>
   );
 }
