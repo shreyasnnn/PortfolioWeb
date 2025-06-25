@@ -4,8 +4,7 @@ import { Button } from "./button";
 import { GithubIcon } from "../assets/icons/githubIcon";
 import { GmailIcon } from "../assets/icons/gmailIcon";
 import { CallIocn } from "../assets/icons/callIcon";
-import shreyasPhoto from'../assets/images/Passport-size-photo-shreyas.jpg'
-
+import {profilePhoto,resume,name,collage} from '../dataController/index'
 export default function NavBar() {
   const [onMouseEnter, setOnMouseEnter] = useState(false);
 
@@ -17,19 +16,19 @@ export default function NavBar() {
           className="rounded-full p-0 shadow-card h-20 w-20"
         >
           <img
-            src={shreyasPhoto}
+            src={profilePhoto}
             className="rounded-full"
           />
         </Button>
 
         <a
-          href="https://drive.google.com/file/d/1ea481adLfFlJGPaHzV8FapbknrngB6Ou/view?usp=sharing"
+          href={resume}
           className="w-[250px] flex flex-col relative"
           onMouseEnter={() => setOnMouseEnter(true)}
           onMouseLeave={() => setOnMouseEnter(false)}
         >
           <span className="font-bold block text-xl">
-            Shreyas Nagaraja
+            {name}
           </span>
 
           <div className="relative h-[40px] mt-1 flex items-center justify-center">
@@ -38,7 +37,7 @@ export default function NavBar() {
                 onMouseEnter ? "opacity-0" : "opacity-100"
               }`}
             >
-              Engineering student at Maharaja Institute of Technology Mysore
+              {collage}
             </p>
             <p
               className={`absolute top-0 left-0 w-full transition-opacity duration-300 ${

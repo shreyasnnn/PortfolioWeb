@@ -19,7 +19,7 @@ export function SlideItem({
       className={classNames("flex flex-row items-center gap-2 p-2 w-fit", className)}
       {...props}
     >
-      <CircleCheckIcon height={20} fill="grey"/>
+      <CircleCheckIcon height={25} fill="grey"/>
       <span>{text}</span>
       {children}
     </div>
