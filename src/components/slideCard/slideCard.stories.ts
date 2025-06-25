@@ -1,10 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import SlideItem from "./SlideItem";
+import slideCard from './slideCard'
 
-// ✅ Use typeof SlideItem to avoid type errors
-const meta: Meta<typeof SlideItem> = {
-  title: "Molecules/SlideItem",
-  component: SlideItem,
+
+// ✅ Use typeof slideCard to avoid type errors
+const meta: Meta<typeof slideCard> = {
+  title: "Molecules/SlideCard",
+  component: slideCard,
   tags: ["autodocs"],
   argTypes: {
     bgColor: { control: "color" },
@@ -16,7 +17,7 @@ const meta: Meta<typeof SlideItem> = {
 export default meta;
 
 // ✅ Define story object (modern Storybook format)
-type Story = StoryObj<typeof SlideItem>;
+type Story = StoryObj<typeof slideCard>;
 
 export const Default: Story = {
   args: {
