@@ -66,7 +66,7 @@ export default function NavBar() {
                   }
                   {
                     button.ICON && <img
-                  className="h-5 "
+                  className="h-5"
                   src={button.ICON.URL}
                   alt={button.ICON.ALT}
                 />
