@@ -1,12 +1,20 @@
 import { useState } from "react";
-import { LinkedinIcon} from "../assets/icons/linkedinIcon"
 import { Button } from "./button";
-import { GithubIcon } from "../assets/icons/githubIcon";
-import { GmailIcon } from "../assets/icons/gmailIcon";
-import { CallIocn } from "../assets/icons/callIcon";
-import {profilePhoto,resume,name,collage} from '../dataController/index'
+
+import {
+  profilePhoto,
+  resume,
+  name,
+  collage,
+  NAV_BAR_ITEM,
+} from "../dataController";
 export default function NavBar() {
   const [onMouseEnter, setOnMouseEnter] = useState(false);
+  
+
+  const handleClick = (url: string) => {
+    window.open(url,'_blank')
+  }
 
   return (
     <div className="w-full flex justify-center mt-10">
@@ -15,23 +23,18 @@ export default function NavBar() {
           variant="secondary"
           className="rounded-full p-0 shadow-card h-20 w-20"
         >
-          <img
-            src={profilePhoto}
-            className="rounded-full"
-          />
+          <img src={profilePhoto} className="rounded-full" />
         </Button>
 
         <a
           href={resume}
-          className="w-[250px] flex flex-col relative"
+          className="w-64 flex flex-col relative"
           onMouseEnter={() => setOnMouseEnter(true)}
           onMouseLeave={() => setOnMouseEnter(false)}
         >
-          <span className="font-bold block text-xl">
-            {name}
-          </span>
+          <span className="font-bold block text-xl">{name}</span>
 
-          <div className="relative h-[40px] mt-1 flex items-center justify-center">
+          <div className="relative h-10 mt-1 flex items-center justify-center">
             <p
               className={`absolute top-0 left-0 w-full transition-opacity duration-300 ${
                 onMouseEnter ? "opacity-0" : "opacity-100"
@@ -49,43 +52,32 @@ export default function NavBar() {
           </div>
         </a>
 
-        <Button
-          variant="secondary"
-          className="rounded-xl h-16 shadow-card border-0"
-          onClick={()=>{window.location.href='https://drive.google.com/file/d/1ea481adLfFlJGPaHzV8FapbknrngB6Ou/view?usp=sharing'}}
-        >
-          🟢 Resume
-        </Button>
-
-        <div className="flex flex-row gap-2 ml-3">
-          <Button
-            variant="secondary"
-            className="rounded-xl h-16 shadow-card border-0"
-            onClick={()=>{window.location.href = 'https://www.linkedin.com/in/shreyas-n-4837a2257/'}}
-          >
-            <LinkedinIcon height={30}/>
-          </Button>
-          <Button
-            variant="secondary"
-            className="rounded-xl h-16 shadow-card border-0"
-            onClick={()=>{window.location.href = 'https://github.com/shreyasnnn'}}
-          >
-            <GithubIcon height={30}/>
-          </Button>
-          <Button
-            variant="secondary"
-            className="rounded-xl h-16 shadow-card border-0"
-            onClick={()=>{window.location.href = 'https://mailto:nshreyas1309@gmail.com'}}
-          >
-            <GmailIcon height={30}/>
-          </Button>
-          <Button
-            variant="secondary"
-            className="rounded-xl h-16 shadow-card border-0"
-            onClick={()=>{window.location.href = 'tel:+9134567890'}}
-          >
-            <CallIocn height={30}/>
-          </Button>
+        <div className="flex flex-row space-x-3">
+          {NAV_BAR_ITEM.ICON_CONFIG.map((button, index) => {
+            return (
+              <Button
+              key={index}
+                variant="secondary"
+                className={`${button.TITLE && "mx-6"} rounded-xl h-16 min-w-16 shadow-card border-0`}
+                onClick={()=>handleClick(button.REDIRECT)}
+              > <div className="flex" >
+                  {
+                    button.IS_ACTIVE && <div >🟢</div>
+                  }
+                  {
+                    button.ICON && <img
+                  className="h-5 "
+                  src={button.ICON.URL}
+                  alt={button.ICON.ALT}
+                />
+                  }
+                  {
+                    button.TITLE && <div>{button.TITLE}</div>
+                  }
+                </div>
+              </Button>
+            );
+          })}
         </div>
       </div>
     </div>

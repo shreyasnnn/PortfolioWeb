@@ -1,6 +1,6 @@
 import { Button } from "../../components/button";
 import NavBar from "../../components/navBar";
-import { SlideItem } from "../../components/slideItem/slideItem";
+import { SlideItem } from "../../components/slideItem";
 import { skills } from "../../dataController/index";
 
 export const HomeScreen = () => {
@@ -10,7 +10,7 @@ export const HomeScreen = () => {
       <NavBar />
 
       {/* Scrollable skills section */}
-      <div className="mt-[100px] w-[30%] mx-auto overflow-hidden  [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
+      <div className="bg-random4 mt-[100px] w-[30%] mx-auto overflow-hidden  [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
         <div className="flex space-x-4 w-max  animate-scroll no-scrollbar opacity-50">
           {skills.map((skill, index) => (
             <SlideItem
