@@ -1,4 +1,9 @@
 import shreyasPhoto from'../assets/images/Passport-size-photo-shreyas.jpg'
+import linkedinIcon from '../assets/svg/linkedinIcon.svg';
+import githubIcon from '../assets/svg/githubIcon.svg';
+import emailIcon from '../assets/svg/email.svg';
+import phoneIcon from '../assets/svg/phonecallIcon.svg';
+
 export const webData = {
     name: 'shreyas',
 };
@@ -19,8 +24,8 @@ export const collage = 'Engineering student at Maharaja Institute of Technology 
 export const profilePhoto = shreyasPhoto ;
 export const resume = "https://drive.google.com/file/d/1ea481adLfFlJGPaHzV8FapbknrngB6Ou/view?usp=sharing"
 
-export const NAV_BAR_ITEM ={
-  PROFILE_IMAGE: {shreyasPhoto},
+export const NAV_BAR_ITEM = {
+  PROFILE_IMAGE: shreyasPhoto,
   TITLE: 'Shreyas Nagaraja',
   SUB_TITLE: 'Engineering student at Maharaja Institute of Technology Mysore',
   ICON_CONFIG: [
@@ -31,32 +36,31 @@ export const NAV_BAR_ITEM ={
     },
     {
       ICON: {
-        URL: './src/assets/svg/linkedinIcon.svg',
-        ALT: 'LinkedIn'
+        URL: linkedinIcon,
+        ALT: 'LinkedIn',
+      },
+      REDIRECT: 'https://www.linkedin.com/in/shreyas-n-4837a2257/'
+    },
+    {
+      ICON: {
+        URL: githubIcon,
+        ALT: 'GitHub',
+      },
+      REDIRECT: 'https://github.com/shreyasnnn'
+    },
+    {
+      ICON: {
+        URL: emailIcon,
+        ALT: 'Email',
       },
       REDIRECT: ''
     },
     {
       ICON: {
-        URL: './src/assets/svg/githubIcon.svg',
-        ALT: 'Git-Hub'
+        URL: phoneIcon,
+        ALT: 'Phone',
       },
       REDIRECT: ''
     },
-    {
-      ICON: {
-        URL: './src/assets/svg/email.svg',
-        ALT: 'E-Mail'
-      },
-      REDIRECT: ''
-    },
-    {
-      ICON: {
-        URL: './src/assets/svg/phonecallIcon.svg',
-        ALT: 'Phone'
-      },
-      REDIRECT: ''
-    }
   ]
-  
-}
+};
