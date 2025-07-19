@@ -1,1 +1,1 @@
-export { default as SlideItem } from './slideItem';
+export * from './slideItem'
