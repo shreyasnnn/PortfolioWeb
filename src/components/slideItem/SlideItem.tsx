@@ -8,7 +8,7 @@ type SlideCardProps = {
   className?: string;
 } & React.HTMLAttributes<HTMLDivElement>; // 👈 Use div attributes since you're rendering a <div>
 
-export function SlideItem({
+export default function SlideItem({
   text,
   children,
   className = "",
