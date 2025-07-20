@@ -2,7 +2,7 @@ import React from "react";
 import classNames from "classnames";
 import {CircleCheckIcon} from '../../assets/icons/circleCheckIcon';
 
-type SlideCardProps = {
+type SlideItemProps = {
   text: string;
   children?: React.ReactNode;
   className?: string;
@@ -13,7 +13,7 @@ export function SlideItem({
   children,
   className = "",
   ...props
-}: SlideCardProps) {
+}: SlideItemProps) {
   return (
     <div
       className={classNames("flex flex-row items-center gap-2 p-2 w-fit", className)}

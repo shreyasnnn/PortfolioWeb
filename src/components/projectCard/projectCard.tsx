@@ -16,21 +16,21 @@ export default function ProjectCard({
 
   return (
     <div
-      className={`bg-amber-400 w-[300px] rounded-[2rem] shadow-card overflow-hidden flex flex-col justify-between`}
+      className={` bg-gray-300 max-w-75 rounded-4xl shadow-card overflow-hidden flex flex-col justify-between`}
     >
       {/* Image Section */}
       <div className="flex items-center justify-center py-10 px-4">
-        <img src={src} alt={title} className="h-50 object-contain" />
+        <img src={src} alt={title} className="object-contain w-fit h-fit" />
       </div>
 
       {/* White Bottom Section */}
       <div className="bg-white px-6 pt-4 pb-6 text-center rounded-[2rem] m-1">
-        <h2 className=" font-semibold text-dark">
+        <p className=" text-title-xs font-semibold ">
           {title}
-        </h2>
+        </p>
         <p >{subtitle}</p>
         <div className="mt-4">
-          <Button><ArrowRightIcon /></Button>
+          <Button className="rounded-full">View Project<ArrowRightIcon /></Button>
         </div>
       </div>
     </div>

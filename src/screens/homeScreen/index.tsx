@@ -2,9 +2,11 @@ import { Button } from "../../components/button";
 import NavBar from "../../components/navBar";
 import { SlideItem } from "../../components/slideItem";
 import { skills } from "../../dataController/index";
+import { projectImage } from "../../dataController/index";
+// import ProjectCard from "../../components/projectCard/projectCard"
+// import { ProjectInfo } from "../../dataController/index";
 
 export const HomeScreen = () => {
-
   return (
     <div className="flex-col">
       <NavBar />
@@ -28,7 +30,7 @@ export const HomeScreen = () => {
           <br /> Designing the Difference.
         </h1>
       </div>
-      <div className="mt-20 flex items-center justify-center w-full">
+      <div className="mt-10 flex items-center justify-center w-full">
         <Button className="relative rounded-3xl text-2xl px-10 py-3 overflow-hidden group text-white">
           {/* Default text */}
           <span className="text-body-s font-use-semibold absolute inset-0 flex items-center justify-center transition-opacity duration-300 opacity-100 group-hover:opacity-0">
@@ -41,6 +43,52 @@ export const HomeScreen = () => {
           </span>
         </Button>
       </div>
+
+      {/* Scrollable Project images section */}
+      <div className="mt-25 mx-auto overflow-hidden">
+        <div className="flex space-x-4 w-max  animate-scroll no-scrollbar">
+          {projectImage.image.map((item, index) => {
+            return (
+              <div className="p-5 bg-use-grey-200 rounded-2xl">
+                <img
+                  key={index}
+                  src={item.URL}
+                  alt={item.title}
+                  className="rounded-2xl"
+                />
+              </div>
+            );
+          })}
+        </div>
+      </div>
+
+      <div className="flex items-center justify-center mt-30">
+        <Button variant="primary" className="rounded-full">
+          Sub-Systems
+        </Button>
+      </div>
+
+      <p className="text-title-m font-use-medium text-center mt-10">Projects</p>
+
+      <div className="flex item-center justify-center mt-4">
+        <p className="text-caption-s font-use-light text-center w-[25%]">
+          A blend of engineering projects crafted during academic learning,
+          personal curiosity, and team work.
+        </p>
+      </div>
+
+      {/* <div className="flex items-center justify-center">
+        <div className="grid grid-cols-2 mt-30 gap-x-50 gap-y-50">
+        {ProjectInfo.projects.map((project)=>{
+          return(
+            <div key={project.title}>
+              <ProjectCard  src={project.src} title={project.title} subtitle={project.caption}></ProjectCard>
+            </div>
+          )
+        })}
+      </div>
+      </div> */}
+
     </div>
   );
 };

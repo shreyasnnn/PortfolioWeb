@@ -6,7 +6,7 @@ type SlideCardProps = {
   height?: string;
 };
 
-export default function SlideItem({
+export default function SlideCard({
   src,
   bgColor = "fill02",
   width = "45%",
