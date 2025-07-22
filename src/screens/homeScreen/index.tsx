@@ -3,8 +3,10 @@ import NavBar from "../../components/navBar";
 import { SlideItem } from "../../components/slideItem";
 import { skills } from "../../dataController/index";
 import { projectImage } from "../../dataController/index";
-// import ProjectCard from "../../components/projectCard/projectCard"
-// import { ProjectInfo } from "../../dataController/index";
+import ProjectCard from "../../components/projectCard/projectCard";
+import { ProjectInfo } from "../../dataController/index";
+import { arearOfInterest } from "../../dataController/index";
+import Folder from "../../components/Folder/folder";
 
 export const HomeScreen = () => {
   return (
@@ -77,18 +79,69 @@ export const HomeScreen = () => {
         </p>
       </div>
 
-      {/* <div className="flex items-center justify-center">
-        <div className="grid grid-cols-2 mt-30 gap-x-50 gap-y-50">
-        {ProjectInfo.projects.map((project)=>{
-          return(
-            <div key={project.title}>
-              <ProjectCard  src={project.src} title={project.title} subtitle={project.caption}></ProjectCard>
-            </div>
-          )
-        })}
-      </div>
-      </div> */}
+      <div className="flex items-center justify-center px-4 py-10">
+        <div className="w-full max-w-6xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
+            {ProjectInfo.projects.map((project, idx) => {
+              const isOdd = ProjectInfo.projects.length % 2 !== 0;
+              const isLast = idx === ProjectInfo.projects.length - 1;
+              const isLastOdd = isOdd && isLast;
 
+              return (
+                <div
+                  key={project.title}
+                  className={` ${
+                    isLastOdd ? "sm:col-span-2 flex justify-center" : ""
+                  }`}
+                >
+                  <div className="w-full max-w-md">
+                    <ProjectCard
+                      src={project.src}
+                      title={project.title}
+                      subtitle={project.caption}
+                    />
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      <div className="flex items-center justify-center mt-30">
+        <Button variant="primary" className="rounded-full">
+          Loops
+        </Button>
+      </div>
+      <p className="text-title-m font-use-medium text-center mt-5">
+        Area of Interest
+      </p>
+
+      <div className="flex item-center justify-center mt-4">
+        <p className="text-caption-s font-use-light text-center w-[25%]">
+          Delivering innovative, results-driven solutions that elevate your
+          brand and business
+        </p>
+      </div>
+
+      {/*Area of interst section */}
+      <div className="flex justify-center items-center px-4 py-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-6xl w-full">
+          {arearOfInterest.map((item, idx) => (
+            <div
+              key={idx}
+              className="bg-use-neutral-light p-8 rounded-3xl shadow-md"
+            >
+              <Folder
+                title={item.title}
+                src={item.src}
+                size={2}
+                color="#d7e0df"
+              />
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
   );
 };

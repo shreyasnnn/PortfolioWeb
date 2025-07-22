@@ -127,3 +127,54 @@ export const ProjectInfo = {
   },
 ]
 }
+
+export const arearOfInterest = [
+    {
+      title: 'System Dynamics',
+      src : {
+        first: demoProjectImage,
+        second: demoProjectImage,
+        third: demoProjectImage
+      }
+    },
+    {
+      title: 'System Dynamics',
+      src : {
+        first: demoProjectImage,
+        second: demoProjectImage,
+        third: demoProjectImage
+      }
+    },
+    {
+      title: 'System Dynamics',
+      src : {
+        first: demoProjectImage,
+        second: demoProjectImage,
+        third: demoProjectImage
+      }
+    },
+    {
+      title: 'System Dynamics',
+      src : {
+        first: demoProjectImage,
+        second: demoProjectImage,
+        third: demoProjectImage
+      }
+    },
+    {
+      title: 'System Dynamics',
+      src : {
+        first: demoProjectImage,
+        second: demoProjectImage,
+        third: demoProjectImage
+      }
+    },
+    {
+      title: 'System Dynamics',
+      src : {
+        first: demoProjectImage,
+        second: demoProjectImage,
+        third: demoProjectImage
+      }
+    },
+  ]
