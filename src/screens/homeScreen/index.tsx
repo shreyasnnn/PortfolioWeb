@@ -1,12 +1,16 @@
 import { Button } from "../../components/button";
 import NavBar from "../../components/navBar";
 import { SlideItem } from "../../components/slideItem";
+import { ToolItem } from "../../components/toolItem";
 import { skills } from "../../dataController/index";
 import { projectImage } from "../../dataController/index";
 import ProjectCard from "../../components/projectCard/projectCard";
 import { ProjectInfo } from "../../dataController/index";
 import { arearOfInterest } from "../../dataController/index";
-import Folder from "../../components/Folder/folder";
+import Folder from "../../components/folder/folder";
+import { tools } from "../../dataController/index";
+import  Footer from "../../components/footer/footer"
+
 
 export const HomeScreen = () => {
   return (
@@ -79,8 +83,9 @@ export const HomeScreen = () => {
         </p>
       </div>
 
-      <div className="flex items-center justify-center px-4 py-10">
-        <div className="w-full max-w-6xl">
+      {/* projectCard */}
+      <div className="flex justify-center py-10">
+        <div className="w-full max-w-3xl px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
             {ProjectInfo.projects.map((project, idx) => {
               const isOdd = ProjectInfo.projects.length % 2 !== 0;
@@ -90,7 +95,7 @@ export const HomeScreen = () => {
               return (
                 <div
                   key={project.title}
-                  className={` ${
+                  className={`w-full ${
                     isLastOdd ? "sm:col-span-2 flex justify-center" : ""
                   }`}
                 >
@@ -126,22 +131,53 @@ export const HomeScreen = () => {
 
       {/*Area of interst section */}
       <div className="flex justify-center items-center px-4 py-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-6xl w-full">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl w-full">
           {arearOfInterest.map((item, idx) => (
             <div
               key={idx}
-              className="bg-use-neutral-light p-8 rounded-3xl shadow-md"
+              className="bg-use-neutral-light rounded-3xl shadow-md flex justify-center items-center"
+              style={{ padding: `${item.size * 50}px` }} // dynamically pad to fit folder
             >
               <Folder
                 title={item.title}
                 src={item.src}
-                size={2}
-                color="#d7e0df"
+                size={item.size ?? 1}
+                color="useGrey-200"
               />
             </div>
           ))}
         </div>
       </div>
+      <div className="flex items-center justify-center mt-30">
+        <Button variant="primary" className="rounded-full">
+          Toolkit
+        </Button>
+      </div>
+      <p className="text-title-m font-use-medium text-center mt-5">
+        Powerful Tools,
+      </p>
+
+      <div className="flex item-center justify-center mt-4">
+        <p className="text-caption-s font-use-light text-center w-[25%]">
+          Tools for Design, System Dynamics and More.
+        </p>
+      </div>
+
+      {/*Powerful tools*/}
+      <div className="flex items-center justify-center flex-col gap-2 mt-10">
+        {tools.map((tool, index) => (
+          <ToolItem
+            key={index}
+            title={tool.title}
+            icon={tool.URL}
+            description={tool.caption}
+            percentage={tool.percentage}
+          />
+        ))}
+      </div>
+
+      {/* Get in Touch */}
+      <Footer />
     </div>
   );
 };

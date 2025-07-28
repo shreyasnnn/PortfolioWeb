@@ -59,10 +59,9 @@ export default function NavBar() {
                 variant="secondary"
                 className={`${
                   button.TITLE && "mx-6"
-                } rounded-xl h-16 min-w-16 shadow-card border-0`}
+                } rounded-xl h-14 min-w-12 shadow-card border-0 cursor-pointer transition duration-200 ease-in-out hover:-translate-y-1`}
                 onClick={() => handleClick(button.REDIRECT)}
               >
-                {" "}
                 <div className="flex">
                   {button.IS_ACTIVE && <div>🟢</div>}
                   {button.ICON && (

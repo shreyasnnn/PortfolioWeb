@@ -4,6 +4,7 @@ import githubIcon from "../assets/svg/githubIcon.svg";
 import emailIcon from "../assets/svg/email.svg";
 import phoneIcon from "../assets/svg/phonecallIcon.svg";
 import demoProjectImage from "../assets/images/DemoProject.jpg";
+import { Figma } from "lucide-react";
 
 export const webData = {
   name: "shreyas",
@@ -99,82 +100,134 @@ export const projectImage = {
 };
 
 export const ProjectInfo = {
-  projects:[
-  {
-    title: 'Project 1',
-    caption: 'Design Thinking, Experience DesignDesign Thinking, Experience Design',
-    src: demoProjectImage
-  },
-  {
-    title: 'Project 2',
-    caption: 'Design Thinking, Experience DesignDesign Thinking, Experience Design',
-    src: demoProjectImage
-  },
-  {
-    title: 'Project 3',
-    caption: 'Design Thinking, Experience DesignDesign Thinking, Experience Design',
-    src: demoProjectImage
-  },
-  {
-    title: 'Project 4',
-    caption: 'Design Thinking, Experience DesignDesign Thinking, Experience Design',
-    src: demoProjectImage
-  },
-  {
-    title: 'Project 5',
-    caption: 'Design Thinking, Experience DesignDesign Thinking, Experience Design',
-    src: demoProjectImage
-  },
-]
-}
+  projects: [
+    {
+      title: "Project 1",
+      caption:
+        "Design Thinking, Experience DesignDesign Thinking, Experience Design",
+      src: demoProjectImage,
+    },
+    {
+      title: "Project 2",
+      caption:
+        "Design Thinking, Experience DesignDesign Thinking, Experience Design",
+      src: demoProjectImage,
+    },
+    {
+      title: "Project 3",
+      caption:
+        "Design Thinking, Experience DesignDesign Thinking, Experience Design",
+      src: demoProjectImage,
+    },
+    {
+      title: "Project 4",
+      caption:
+        "Design Thinking, Experience DesignDesign Thinking, Experience Design",
+      src: demoProjectImage,
+    },
+    {
+      title: "Project 5",
+      caption:
+        "Design Thinking, Experience DesignDesign Thinking, Experience Design",
+      src: demoProjectImage,
+    },
+  ],
+};
 
 export const arearOfInterest = [
-    {
-      title: 'System Dynamics',
-      src : {
-        first: demoProjectImage,
-        second: demoProjectImage,
-        third: demoProjectImage
-      }
+  {
+    title: "System Dynamics",
+    src: {
+      first: demoProjectImage,
+      second: demoProjectImage,
+      third: demoProjectImage,
     },
-    {
-      title: 'System Dynamics',
-      src : {
-        first: demoProjectImage,
-        second: demoProjectImage,
-        third: demoProjectImage
-      }
+    size: 2,
+  },
+  {
+    title: "System Dynamics",
+    src: {
+      first: demoProjectImage,
+      second: demoProjectImage,
+      third: demoProjectImage,
     },
-    {
-      title: 'System Dynamics',
-      src : {
-        first: demoProjectImage,
-        second: demoProjectImage,
-        third: demoProjectImage
-      }
+    size: 2,
+  },
+  {
+    title: "System Dynamics",
+    src: {
+      first: demoProjectImage,
+      second: demoProjectImage,
+      third: demoProjectImage,
     },
-    {
-      title: 'System Dynamics',
-      src : {
-        first: demoProjectImage,
-        second: demoProjectImage,
-        third: demoProjectImage
-      }
+    size: 2,
+  },
+  {
+    title: "System Dynamics",
+    src: {
+      first: demoProjectImage,
+      second: demoProjectImage,
+      third: demoProjectImage,
     },
-    {
-      title: 'System Dynamics',
-      src : {
-        first: demoProjectImage,
-        second: demoProjectImage,
-        third: demoProjectImage
-      }
+    size: 2,
+  },
+  {
+    title: "System Dynamics",
+    src: {
+      first: demoProjectImage,
+      second: demoProjectImage,
+      third: demoProjectImage,
     },
-    {
-      title: 'System Dynamics',
-      src : {
-        first: demoProjectImage,
-        second: demoProjectImage,
-        third: demoProjectImage
-      }
+    size: 2,
+  },
+  {
+    title: "System Dynamics",
+    src: {
+      first: demoProjectImage,
+      second: demoProjectImage,
+      third: demoProjectImage,
     },
-  ]
+    size: 2,
+  }, 
+];
+export const tools = [
+  {
+    title: 'Figma',
+    caption:'Designin intuitive with seamless collaborati ',
+    URL: demoProjectImage,
+    percentage: 95
+  },
+  {
+    title: 'Figma',
+    caption:'Designin intuitive with seamless collaborati ',
+    URL: demoProjectImage,
+    percentage: 80
+  },
+  {
+    title: 'Figma',
+    caption:'Designin intuitive with seamless collaborati ',
+    URL: demoProjectImage,
+    percentage: 75
+  },
+  {
+    title: 'Figma',
+    caption:'Designin intuitive with seamless collaborati ',
+    URL: demoProjectImage,
+    percentage: 75
+  },
+  {
+    title: 'Figma',
+    caption:'Designin intuitive with seamless collaborati ',
+    URL: demoProjectImage,
+    percentage: 65
+  },
+  {
+    title: 'Figma',
+    caption:'Designin intuitive with seamless collaborati ',
+    URL: demoProjectImage,
+    percentage: 60
+  },
+]
+
+export const myMobileNumber = '+91 8317449363'
+export const myMial = 'nshreyas1309@gmail.com'

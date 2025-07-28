@@ -1,5 +1,6 @@
 import { Button } from "../button";
 import ArrowRightIcon from "../../assets/icons/arrowRightIcon";
+
 type ProjectCardProps = {
   src: string;
   title: string;
@@ -11,26 +12,25 @@ export default function ProjectCard({
   title = "Project Title",
   subtitle = "Project description or subtitle should be here",
 }: ProjectCardProps) {
-//   const random = Math.floor(Math.random() * 5) + 1;
-//   const bgClass = `bg-[var(--color-random${random})]`; to randomly pic color out of 5 random colors
-
   return (
-    <div
-      className={` bg-gray-300 max-w-75 rounded-4xl shadow-card overflow-hidden flex flex-col justify-between`}
-    >
-      {/* Image Section */}
-      <div className="flex items-center justify-center py-10 px-4">
-        <img src={src} alt={title} className="object-contain w-fit h-fit" />
+    <div className="group bg-use-grey-200 rounded-4xl shadow-card overflow-hidden flex flex-col justify-between">
+      {/* Image Section with spacing at the top */}
+      <div className="relative w-full h-64 px-4 pt-10 pb-4">
+        <img
+          src={src}
+          alt={title}
+          className="w-full h-full object-cover transition-transform duration-300 ease-in-out group-hover:scale-105 rounded-3xl"
+        />
       </div>
 
-      {/* White Bottom Section */}
-      <div className="bg-white px-6 pt-4 pb-6 text-center rounded-[2rem] m-1">
-        <p className=" text-title-xs font-semibold ">
-          {title}
-        </p>
-        <p >{subtitle}</p>
+      {/* White Bottom Section (overlapping slightly if needed) */}
+      <div className="bg-use-grey-100 px-6 pt-4 pb-6 text-center rounded-[2rem] m-4 z-10 relative shadow-md">
+        <p className="text-title-xs font-semibold">{title}</p>
+        <p>{subtitle}</p>
         <div className="mt-4">
-          <Button className="rounded-full">View Project<ArrowRightIcon /></Button>
+          <Button className="rounded-full">
+            View Project <ArrowRightIcon />
+          </Button>
         </div>
       </div>
     </div>
