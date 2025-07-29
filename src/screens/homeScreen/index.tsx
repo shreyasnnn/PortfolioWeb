@@ -1,89 +1,99 @@
+import { useRef, type RefObject } from "react";
 import { Button } from "../../components/button";
 import NavBar from "../../components/navBar";
 import { SlideItem } from "../../components/slideItem";
 import { ToolItem } from "../../components/toolItem";
-import { skills } from "../../dataController/index";
-import { projectImage } from "../../dataController/index";
+import { skills, projectImage, ProjectInfo, arearOfInterest, tools } from "../../dataController/index";
 import ProjectCard from "../../components/projectCard/projectCard";
-import { ProjectInfo } from "../../dataController/index";
-import { arearOfInterest } from "../../dataController/index";
 import Folder from "../../components/folder/folder";
-import { tools } from "../../dataController/index";
-import  Footer from "../../components/footer/footer"
-
+import Footer from "../../components/footer/footer";
+import Menu from '../../components/menu/menu';
+import HomeIcon from "../../assets/icons/homeIcon";
+import AboutIcon from '../../assets/icons/aboutIcon'
+import ProjectIcon from '../../assets/icons/projectIcon'
+import ToolkitIcon from '../../assets/icons/toolkitIcon'
 
 export const HomeScreen = () => {
+  // ✅ Use proper types for section refs
+  const Home = useRef<HTMLElement>(null);
+  const About = useRef<HTMLElement>(null);
+  const Projects = useRef<HTMLElement>(null);
+  const Toolkit = useRef<HTMLElement>(null);
+
+  const MenuItems = [
+    { label: "Home", ref: Home, logo: <HomeIcon height={25}/> },
+    { label: "About", ref: About, logo: <AboutIcon height={23}/> },
+    { label: "Projects", ref: Projects, logo: <ProjectIcon height={25}/> },
+    { label: "Toolkits", ref: Toolkit, logo: <ToolkitIcon height={25}/> },
+  ];
+
+  const scrollToSection = (ref: RefObject<HTMLElement | null>) => {
+  if (ref.current) {
+    ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+};
+
   return (
-    <div className="flex-col">
+    <section ref={Home} className="flex-col relative">
       <NavBar />
 
-      {/* Scrollable skills section */}
-      <div className=" mt-25 lg:w-[30%] w-[80%] mx-auto overflow-hidden  [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
-        <div className="flex space-x-4 w-max  animate-scroll no-scrollbar opacity-50">
+      {/* Skills Scroll */}
+      <div className="mt-25 lg:w-[30%] w-[80%] mx-auto overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
+        <div className="flex space-x-4 w-max animate-scroll no-scrollbar opacity-50">
           {skills.map((skill, index) => (
             <SlideItem
               key={index}
               text={skill}
               className="px-4 py-2 rounded-3xl border-white border-2 bg-gray-100 opacity-80 text-lg text-gray-800 text-opacity-60 shrink-0"
-            ></SlideItem>
+            />
           ))}
         </div>
       </div>
 
+      {/* Title */}
       <div className="mt-10 flex items-center justify-center">
         <h1 className="text-title-s font-use-semibold text-center">
           Connecting the Dots.
           <br /> Designing the Difference.
         </h1>
       </div>
+
+      {/* Projects Button */}
       <div className="mt-10 flex items-center justify-center w-full">
         <Button className="relative rounded-3xl text-2xl px-10 py-3 overflow-hidden group text-white">
-          {/* Default text */}
           <span className="text-body-s font-use-semibold absolute inset-0 flex items-center justify-center transition-opacity duration-300 opacity-100 group-hover:opacity-0">
             Projects
           </span>
-
-          {/* Hover text */}
           <span className="text-body-s font-use-semibold opacity-0 group-hover:opacity-100 transition-color duration-300">
             Let's go
           </span>
         </Button>
       </div>
 
-      {/* Scrollable Project images section */}
+      {/* Project Scroll Images */}
       <div className="mt-25 mx-auto overflow-hidden">
-        <div className="flex space-x-4 w-max  animate-scroll no-scrollbar">
-          {projectImage.image.map((item, index) => {
-            return (
-              <div className="p-5 bg-use-grey-200 rounded-2xl">
-                <img
-                  key={index}
-                  src={item.URL}
-                  alt={item.title}
-                  className="rounded-2xl"
-                />
-              </div>
-            );
-          })}
+        <div className="flex space-x-4 w-max animate-scroll no-scrollbar">
+          {projectImage.image.map((item, index) => (
+            <div key={index} className="p-5 bg-use-grey-200 rounded-2xl">
+              <img src={item.URL} alt={item.title} className="rounded-2xl" />
+            </div>
+          ))}
         </div>
       </div>
 
-      <div className="flex items-center justify-center mt-30">
-        <Button variant="primary" className="rounded-full">
-          Sub-Systems
-        </Button>
-      </div>
+      {/* Subsystems Button */}
+      <section ref={Projects} className="flex items-center justify-center mt-30">
+        <Button variant="primary" className="rounded-full">Sub-Systems</Button>
+      </section>
 
       <p className="text-title-m font-use-medium text-center mt-10">Projects</p>
-
       <div className="flex item-center justify-center mt-4">
         <p className="text-caption-s font-use-light text-center w-[25%]">
-          A blend of engineering projects crafted during academic learning,
-          personal curiosity, and team work.
+          A blend of engineering projects crafted during academic learning, personal curiosity, and teamwork.
         </p>
       </div>
 
-      {/* projectCard */}
+      {/* Project Cards */}
       <div className="flex justify-center py-10">
         <div className="w-full max-w-3xl px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
@@ -91,13 +101,10 @@ export const HomeScreen = () => {
               const isOdd = ProjectInfo.projects.length % 2 !== 0;
               const isLast = idx === ProjectInfo.projects.length - 1;
               const isLastOdd = isOdd && isLast;
-
               return (
                 <div
                   key={project.title}
-                  className={`w-full ${
-                    isLastOdd ? "sm:col-span-2 flex justify-center" : ""
-                  }`}
+                  className={`w-full ${isLastOdd ? "sm:col-span-2 flex justify-center" : ""}`}
                 >
                   <div className="w-full max-w-md">
                     <ProjectCard
@@ -113,30 +120,23 @@ export const HomeScreen = () => {
         </div>
       </div>
 
+      {/* Area of Interest */}
       <div className="flex items-center justify-center mt-30">
-        <Button variant="primary" className="rounded-full">
-          Loops
-        </Button>
+        <Button variant="primary" className="rounded-full">Loops</Button>
       </div>
-      <p className="text-title-m font-use-medium text-center mt-5">
-        Area of Interest
-      </p>
-
+      <p className="text-title-m font-use-medium text-center mt-5">Area of Interest</p>
       <div className="flex item-center justify-center mt-4">
         <p className="text-caption-s font-use-light text-center w-[25%]">
-          Delivering innovative, results-driven solutions that elevate your
-          brand and business
+          Delivering innovative, results-driven solutions that elevate your brand and business
         </p>
       </div>
-
-      {/*Area of interst section */}
       <div className="flex justify-center items-center px-4 py-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl w-full">
           {arearOfInterest.map((item, idx) => (
             <div
               key={idx}
               className="bg-use-neutral-light rounded-3xl shadow-md flex justify-center items-center"
-              style={{ padding: `${item.size * 50}px` }} // dynamically pad to fit folder
+              style={{ padding: `${item.size * 50}px` }}
             >
               <Folder
                 title={item.title}
@@ -148,22 +148,18 @@ export const HomeScreen = () => {
           ))}
         </div>
       </div>
-      <div className="flex items-center justify-center mt-30">
-        <Button variant="primary" className="rounded-full">
-          Toolkit
-        </Button>
-      </div>
-      <p className="text-title-m font-use-medium text-center mt-5">
-        Powerful Tools,
-      </p>
 
+      {/* Toolkit Section */}
+      <section ref={Toolkit}  className="flex items-center justify-center mt-30">
+        <Button variant="primary" className="rounded-full">Toolkit</Button>
+      </section>
+      <p className="text-title-m font-use-medium text-center mt-5">Powerful Tools,</p>
       <div className="flex item-center justify-center mt-4">
         <p className="text-caption-s font-use-light text-center w-[25%]">
           Tools for Design, System Dynamics and More.
         </p>
       </div>
 
-      {/*Powerful tools*/}
       <div className="flex items-center justify-center flex-col gap-2 mt-10">
         {tools.map((tool, index) => (
           <ToolItem
@@ -176,8 +172,11 @@ export const HomeScreen = () => {
         ))}
       </div>
 
-      {/* Get in Touch */}
+      {/* Footer */}
       <Footer />
-    </div>
+
+      {/* Bottom-Centered Scroll Menu */}
+      <Menu scrollToSection={scrollToSection} items={MenuItems}><Button onClick={()=>scrollToSection(Projects)}  className="cursor-pointer rounded-4xl text-title-xs ">Projects</Button></Menu>
+    </section>
   );
 };
