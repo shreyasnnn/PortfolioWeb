@@ -12,6 +12,7 @@ import HomeIcon from "../../assets/icons/homeIcon";
 import AboutIcon from '../../assets/icons/aboutIcon'
 import ProjectIcon from '../../assets/icons/projectIcon'
 import ToolkitIcon from '../../assets/icons/toolkitIcon'
+import FadeInOnScroll from "../../assets/UI/fadeInScroll";
 
 export const HomeScreen = () => {
   // ✅ Use proper types for section refs
@@ -35,10 +36,13 @@ export const HomeScreen = () => {
 
   return (
     <section ref={Home} className="flex-col relative">
-      <NavBar />
+      <FadeInOnScroll delayMs={500}>
+        <NavBar />
+      </FadeInOnScroll>
 
       {/* Skills Scroll */}
-      <div className="mt-25 lg:w-[30%] w-[80%] mx-auto overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
+      <FadeInOnScroll delayMs={700}>
+        <div className="mt-25 lg:w-[30%] w-[80%] mx-auto overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
         <div className="flex space-x-4 w-max animate-scroll no-scrollbar opacity-50">
           {skills.map((skill, index) => (
             <SlideItem
@@ -49,17 +53,21 @@ export const HomeScreen = () => {
           ))}
         </div>
       </div>
+      </FadeInOnScroll>
 
       {/* Title */}
       <div className="mt-10 flex items-center justify-center">
-        <h1 className="text-title-s font-use-semibold text-center">
+        <FadeInOnScroll delayMs={900}>
+          <h1 className="text-title-s font-use-semibold text-center">
           Connecting the Dots.
           <br /> Designing the Difference.
         </h1>
+        </FadeInOnScroll>
       </div>
 
       {/* Projects Button */}
-      <div className="mt-10 flex items-center justify-center w-full">
+      <FadeInOnScroll delayMs={1100}>
+        <div className="mt-10 flex items-center justify-center w-full">
         <Button className="relative rounded-3xl text-2xl px-10 py-3 overflow-hidden group text-white">
           <span className="text-body-s font-use-semibold absolute inset-0 flex items-center justify-center transition-opacity duration-300 opacity-100 group-hover:opacity-0">
             Projects
@@ -69,9 +77,11 @@ export const HomeScreen = () => {
           </span>
         </Button>
       </div>
+      </FadeInOnScroll>
 
       {/* Project Scroll Images */}
-      <div className="mt-25 mx-auto overflow-hidden">
+      <FadeInOnScroll delayMs={100}>
+        <div className="mt-25 mx-auto overflow-hidden">
         <div className="flex space-x-4 w-max animate-scroll no-scrollbar">
           {projectImage.image.map((item, index) => (
             <div key={index} className="p-5 bg-use-grey-200 rounded-2xl">
@@ -80,18 +90,25 @@ export const HomeScreen = () => {
           ))}
         </div>
       </div>
+      </FadeInOnScroll>
 
       {/* Subsystems Button */}
-      <section ref={Projects} className="flex items-center justify-center mt-30">
+      <FadeInOnScroll delayMs={300}>
+        <section ref={Projects} className="flex items-center justify-center mt-30">
         <Button variant="primary" className="rounded-full">Sub-Systems</Button>
       </section>
+      </FadeInOnScroll>
 
-      <p className="text-title-m font-use-medium text-center mt-10">Projects</p>
+      <FadeInOnScroll delayMs={400}>
+        <p className="text-title-m font-use-medium text-center mt-10">Projects</p>
+      </FadeInOnScroll>
+        <FadeInOnScroll delayMs={500}>
       <div className="flex item-center justify-center mt-4">
-        <p className="text-caption-s font-use-light text-center w-[25%]">
+          <p className="text-caption-s font-use-light text-center w-[25%]">
           A blend of engineering projects crafted during academic learning, personal curiosity, and teamwork.
         </p>
       </div>
+        </FadeInOnScroll>
 
       {/* Project Cards */}
       <div className="flex justify-center py-10">
@@ -121,16 +138,25 @@ export const HomeScreen = () => {
       </div>
 
       {/* Area of Interest */}
-      <div className="flex items-center justify-center mt-30">
+      <FadeInOnScroll delayMs={200}>
+        <div className="flex items-center justify-center mt-30">
         <Button variant="primary" className="rounded-full">Loops</Button>
       </div>
-      <p className="text-title-m font-use-medium text-center mt-5">Area of Interest</p>
-      <div className="flex item-center justify-center mt-4">
+      </FadeInOnScroll>
+      <FadeInOnScroll delayMs={300} direction="up">
+        <p className="text-title-m font-use-medium text-center mt-5">Area of Interest</p>
+      </FadeInOnScroll>
+      <FadeInOnScroll delayMs={400}>
+        <div className="flex item-center justify-center mt-4">
         <p className="text-caption-s font-use-light text-center w-[25%]">
           Delivering innovative, results-driven solutions that elevate your brand and business
         </p>
       </div>
-      <div className="flex justify-center items-center px-4 py-10">
+      </FadeInOnScroll>
+      
+
+      <FadeInOnScroll delayMs={100}>
+        <div className="flex justify-center items-center px-4 py-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl w-full">
           {arearOfInterest.map((item, idx) => (
             <div
@@ -148,19 +174,27 @@ export const HomeScreen = () => {
           ))}
         </div>
       </div>
+      </FadeInOnScroll>
 
       {/* Toolkit Section */}
-      <section ref={Toolkit}  className="flex items-center justify-center mt-30">
+     <FadeInOnScroll delayMs={200}>
+       <section ref={Toolkit}  className="flex items-center justify-center mt-30">
         <Button variant="primary" className="rounded-full">Toolkit</Button>
       </section>
-      <p className="text-title-m font-use-medium text-center mt-5">Powerful Tools,</p>
-      <div className="flex item-center justify-center mt-4">
+     </FadeInOnScroll>
+      <FadeInOnScroll delayMs={300}>
+        <p className="text-title-m font-use-medium text-center mt-5">Powerful Tools,</p>
+      </FadeInOnScroll>
+      <FadeInOnScroll delayMs={400}>
+        <div className="flex item-center justify-center mt-4">
         <p className="text-caption-s font-use-light text-center w-[25%]">
           Tools for Design, System Dynamics and More.
         </p>
       </div>
+      </FadeInOnScroll>
 
-      <div className="flex items-center justify-center flex-col gap-2 mt-10">
+      <FadeInOnScroll delayMs={100}>
+        <div className="flex items-center justify-center flex-col gap-2 mt-10">
         {tools.map((tool, index) => (
           <ToolItem
             key={index}
@@ -168,9 +202,11 @@ export const HomeScreen = () => {
             icon={tool.URL}
             description={tool.caption}
             percentage={tool.percentage}
+            speed={1500}
           />
         ))}
       </div>
+      </FadeInOnScroll>
 
       {/* Footer */}
       <Footer />
