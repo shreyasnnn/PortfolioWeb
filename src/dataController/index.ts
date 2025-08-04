@@ -4,7 +4,6 @@ import githubIcon from "../assets/svg/githubIcon.svg";
 import emailIcon from "../assets/svg/email.svg";
 import phoneIcon from "../assets/svg/phonecallIcon.svg";
 import demoProjectImage from "../assets/images/DemoProject.jpg";
-import { Figma } from "lucide-react";
 
 export const webData = {
   name: "shreyas",
