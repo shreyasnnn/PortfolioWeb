@@ -159,7 +159,8 @@ export const HomeScreen = () => {
                 >
                   <div className="w-full max-w-md">
                     <ProjectCard
-                      src={project.src}
+                      id={project.id}
+                      src={project.coverImage}
                       title={project.title}
                       subtitle={project.caption}
                     />

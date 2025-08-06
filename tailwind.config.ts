@@ -22,6 +22,7 @@ const config: Config = {
         useGrey: {
           100: "#fefeff",
           200: "#d7d9db",
+          300: "#afb3b0",
           900: "#211f27",
         },
         usePurple: {
