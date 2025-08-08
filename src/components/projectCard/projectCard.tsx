@@ -1,13 +1,16 @@
 import { Button } from "../button";
 import ArrowRightIcon from "../../assets/icons/arrowRightIcon";
+import { Link } from "react-router-dom";
 
 type ProjectCardProps = {
   src: string;
   title: string;
   subtitle: string;
+  id: string;
 };
 
 export default function ProjectCard({
+  id,
   src,
   title = "Project Title",
   subtitle = "Project description or subtitle should be here",
@@ -28,9 +31,11 @@ export default function ProjectCard({
         <p className="text-title-xs font-semibold">{title}</p>
         <p>{subtitle}</p>
         <div className="mt-4">
-          <Button className="rounded-full">
-            View Project <ArrowRightIcon />
-          </Button>
+          <Link to={`/project/${id}`}>
+            <Button className="rounded-full">
+              View Project <ArrowRightIcon />
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

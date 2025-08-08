@@ -4,7 +4,6 @@ import githubIcon from "../assets/svg/githubIcon.svg";
 import emailIcon from "../assets/svg/email.svg";
 import phoneIcon from "../assets/svg/phonecallIcon.svg";
 import demoProjectImage from "../assets/images/DemoProject.jpg";
-import { Figma } from "lucide-react";
 
 export const webData = {
   name: "shreyas",
@@ -102,34 +101,95 @@ export const projectImage = {
 export const ProjectInfo = {
   projects: [
     {
+      id: "project-1",
       title: "Project 1",
-      caption:
-        "Design Thinking, Experience DesignDesign Thinking, Experience Design",
-      src: demoProjectImage,
+      caption: "Design Thinking, Experience Design",
+      coverImage: demoProjectImage, // thumbnail for card
+      images: [
+        demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,
+      ],
+      description: "This is a detailed explanation of Project 1...",
+      placeAndAffiliation: 'NIFT Gandhinagar',
+      field: 'Designin Innovation Method',
+      time: '4-Months'
     },
     {
+      id: "project-2",
       title: "Project 2",
-      caption:
-        "Design Thinking, Experience DesignDesign Thinking, Experience Design",
-      src: demoProjectImage,
+      caption: "UI/UX Exploration",
+      coverImage: demoProjectImage,
+      images: [
+       demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,
+      ],
+      description: "This is a detailed explanation of Project 2...",
+      placeAndAffiliation: 'NIFT Gandhinagar',
+      field: 'Designin Innovation Method',
+      time: '4-Months'
     },
     {
+      id: "project-3",
       title: "Project 3",
-      caption:
-        "Design Thinking, Experience DesignDesign Thinking, Experience Design",
-      src: demoProjectImage,
+      caption: "Design Thinking, Experience Design",
+      coverImage: demoProjectImage, // thumbnail for card
+      images: [
+        demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,
+      ],
+      description: "This is a detailed explanation of Project 3...",
+      placeAndAffiliation: 'NIFT Gandhinagar',
+      field: 'Designin Innovation Method',
+      time: '4-Months'
     },
     {
+      id: "project-4",
       title: "Project 4",
-      caption:
-        "Design Thinking, Experience DesignDesign Thinking, Experience Design",
-      src: demoProjectImage,
+      caption: "UI/UX Exploration",
+      coverImage: demoProjectImage,
+      images: [
+       demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,
+      ],
+      description: "This is a detailed explanation of Project 42...",
+      placeAndAffiliation: 'NIFT Gandhinagar',
+      field: 'Designin Innovation Method',
+      time: '4-Months'
     },
     {
+      id: "project-5",
       title: "Project 5",
-      caption:
-        "Design Thinking, Experience DesignDesign Thinking, Experience Design",
-      src: demoProjectImage,
+      caption: "Design Thinking, Experience Design",
+      coverImage: demoProjectImage, // thumbnail for card
+      images: [
+        demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,
+      ],
+      description: "This is a detailed explanation of Project 5...",
+      placeAndAffiliation: 'NIFT Gandhinagar',
+      field: 'Designin Innovation Method',
+      time: '4-Months'
+    },
+    {
+      id: "project-6",
+      title: "Project 6",
+      caption: "UI/UX Exploration",
+      coverImage: demoProjectImage,
+      images: [
+       demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,
+      ],
+      description: "This is a detailed explanation of Project 6...",
+      placeAndAffiliation: 'NIFT Gandhinagar',
+      field: 'Designin Innovation Method',
+      time: '4-Months'
+    },
+    {
+      id: "project-7",
+      title: "Project 7",
+      caption: "UI/UX Exploration",
+      coverImage: demoProjectImage,
+      images: [
+       demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,
+      ],
+      description: "This is a detailed explanation of Project 7...",
+      placeAndAffiliation: 'NIFT Gandhinagar',
+      field: 'Designin Innovation Method',
+      time: '4-Months'
     },
   ],
 };
@@ -228,6 +288,24 @@ export const tools = [
     percentage: 60
   },
 ]
+
+export const projectsDetails = [
+  {
+    URL: emailIcon,
+    title: 'Place and Affiliateion',
+    Content: 'NAMTECH, Gandhinagar, Panipath',
+  },
+  {
+    URL: emailIcon,
+    title: 'Field',
+    Content: 'Textile Recycle System',
+  },
+  {
+    URL: emailIcon,
+    title: 'Time',
+    Content: '5-Months',
+  },
+];
 
 export const myMobileNumber = '+91 8317449363'
 export const myMial = 'nshreyas1309@gmail.com'
