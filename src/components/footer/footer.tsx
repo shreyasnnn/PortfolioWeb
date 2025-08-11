@@ -3,7 +3,7 @@ import emailjs from "emailjs-com";
 import { Button } from "../../components/button";
 import ArrowRightIcon from "../../assets/icons/arrowRightIcon";
 import CopyRightIcon from "../../assets/icons/copyrightIcon";
-import { myMial, myMobileNumber, NAV_BAR_ITEM } from "../../dataController";
+import { sectionTexts,NAV_BAR_ITEM } from "../../dataController";
 import FadeInScroll from "../../assets/UI/fadeInScroll";
 
 export default function ContactSection() {
@@ -59,13 +59,13 @@ export default function ContactSection() {
                 variant="primary"
                 className="text-body-xs sm:text-body-s rounded-2xl md:rounded-3xl mt-3 sm:mt-6 md:mt-8"
               >
-                Contact
+                {sectionTexts.contactSection.btnText}
               </Button>
             </FadeInScroll>
 
             <FadeInScroll delayMs={350}>
               <h2 className="text-title-s sm:text-title-m font-use-semibold text-center">
-                Get in Touch
+                {sectionTexts.contactSection.title}
               </h2>
             </FadeInScroll>
 
@@ -87,15 +87,21 @@ export default function ContactSection() {
             <Button
               variant="primary"
               onClick={sendEmail}
-              className="rounded-2xl md:rounded-3xl w-full sm:w-4/5 md:w-3/5 px-3 sm:px-4 py-2 sm:py-3 flex justify-between items-center gap-2"
+              className="cursor-pointer rounded-2xl md:rounded-3xl w-full sm:w-4/5 md:w-3/5 px-3 sm:px-4 py-2 sm:py-3 flex justify-between items-center gap-2 
+             group transition-transform duration-300 ease-out hover:scale-105"
             >
-              <span className="text-body-xs sm:text-body-s">Send message</span>
-              <ArrowRightIcon className="w-4 h-4 sm:w-5 sm:h-5" />
+              <span className="text-body-xs sm:text-body-s transition-all duration-300 ease-out">
+                Send message
+              </span>
+              <ArrowRightIcon
+                className="w-4 h-4 sm:w-5 sm:h-5 transform transition-all duration-300 ease-out 
+               group-hover:translate-x-10 group-hover:rotate-[320deg]"
+              />
             </Button>
 
             <FadeInScroll delayMs={350} direction="down">
               <p className="text-caption-xs text-use-grey-900 mt-3 sm:mt-4">
-                Let's Connect
+                {sectionTexts.contactSection.description}
               </p>
             </FadeInScroll>
 
@@ -104,7 +110,7 @@ export default function ContactSection() {
                 href="tel:+91 8317449363"
                 className="text-body-s sm:text-title-xs font-use-medium"
               >
-                {myMobileNumber}
+                {sectionTexts.contactSection.mobileNumber}
               </a>
             </FadeInScroll>
             <FadeInScroll delayMs={250} direction="down">
@@ -112,7 +118,7 @@ export default function ContactSection() {
                 href="mailto:nshreyas1309@gmail.com"
                 className="text-body-s sm:text-title-s font-use-semibold"
               >
-                {myMial}
+                {sectionTexts.contactSection.gMail}
               </a>
             </FadeInScroll>
             <FadeInScroll delayMs={100} direction="down">
@@ -150,7 +156,7 @@ export default function ContactSection() {
 
           <p className="w-full flex items-center justify-center text-caption-xs mt-4 sm:mt-6">
             <CopyRightIcon height={14} className="mr-1" />
-            2024, Rights Reserved
+            {sectionTexts.contactSection.copyRights}
           </p>
         </div>
       </div>

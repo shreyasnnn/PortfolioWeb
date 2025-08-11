@@ -20,12 +20,42 @@ export const skills = [
   "MongoDB",
   "Express",
 ];
+
 export const name = "Shreyas Nagaraja";
+
 export const collage =
   "Engineering student at Maharaja Institute of Technology Mysore";
-export const profilePhoto = shreyasPhoto;
-export const resume =
+
+  export const profilePhoto = shreyasPhoto;
+
+  export const resume =
   "https://drive.google.com/file/d/1ea481adLfFlJGPaHzV8FapbknrngB6Ou/view?usp=sharing";
+
+  export const sectionTexts = {
+    projectSection:{
+      btnText: 'Sub-Systems',
+      title: 'Projects',
+      description: 'A blend of engineering projects crafted during academic learning, personal curiosity, and teamwork.'
+    },
+    areaOfInterestSection:{
+      btnText: 'Loops',
+      title: 'Area of Interest',
+      description: 'Delivering innovative, results-driven solutions that elevate your brand and business.'
+    },
+    powerfulToolsSection:{
+      btnText: 'Toolkit',
+      title: 'Powerful Tools,',
+      description: 'Tools for Design, System Dynamics and More.'
+    },
+    contactSection:{
+      btnText: 'Contact',
+      title: 'Get in Touch',
+      description: "Let's Connect",
+      mobileNumber: '+91 8317449363',
+      gMail: 'nshreyas1309@gmail.com',
+      copyRights: '2024, Rights Reserved'
+    }
+  }
 
 export const NAV_BAR_ITEM = {
   PROFILE_IMAGE: shreyasPhoto,
@@ -102,7 +132,7 @@ export const ProjectInfo = {
   projects: [
     {
       id: "project-1",
-      title: "Project 1",
+      title: "Project_title",
       caption: "Design Thinking, Experience Design",
       coverImage: demoProjectImage, // thumbnail for card
       images: [
@@ -306,6 +336,3 @@ export const projectsDetails = [
     Content: '5-Months',
   },
 ];
-
-export const myMobileNumber = '+91 8317449363'
-export const myMial = 'nshreyas1309@gmail.com'
