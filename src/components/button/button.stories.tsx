@@ -22,14 +22,14 @@ type Story = StoryObj<typeof Button>;
 export const Black: Story = {
   args: {
     children: "Black Button",
-    variant: "black",
+    variant: "primary",
   },
 };
 
 export const White: Story = {
   args: {
     children: "White Button",
-    variant: "white",
+    variant: "secondary",
   },
 };
 
@@ -43,7 +43,7 @@ export const Empty: Story = {
 export const Disabled: Story = {
   args: {
     children: "Disabled",
-    variant: "black",
+    variant: "primary",
     disabled: true,
   },
 };
@@ -52,6 +52,6 @@ export const CustomClass: Story = {
   args: {
     children: "Custom Style",
     className: "rounded-full px-8 text-sm",
-    variant: "white",
+    variant: "secondary",
   },
 };
