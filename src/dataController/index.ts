@@ -4,6 +4,22 @@ import githubIcon from "../assets/svg/githubIcon.svg";
 import emailIcon from "../assets/svg/email.svg";
 import phoneIcon from "../assets/svg/phonecallIcon.svg";
 import demoProjectImage from "../assets/images/DemoProject.jpg";
+import tobaccoAiCover from "../assets/images/tobaccoAi/cover.png"
+import portfolioCover from "../assets/images/Portfolio/cover.png"
+import pingmeCover from "../assets/images/PingMe/cover.png"
+import auraCover from "../assets/images/aura/cover.png"
+import aiwhiteboardCover from "../assets/images/aiwhiteboard/cover.png"
+import canva from "../assets/images/tools/canva.png"
+import figma from "../assets/images/tools/figma.png"
+import git from "../assets/images/tools/git.png"
+import reactjs from "../assets/images/tools/reactjs.png"
+import reactnative from "../assets/images/tools/reactnative.png"
+import js from "../assets/images/tools/js.png"
+import ts from "../assets/images/tools/ts.png"
+import tailwind from "../assets/images/tools/tailwind.png"
+import supabase from "../assets/images/tools/supabase.jpg"
+import firebase from "../assets/images/tools/firebase.png"
+
 
 export const webData = {
   name: "shreyas",
@@ -18,7 +34,7 @@ export const skills = [
   "Node.js",
   "Git",
   "MongoDB",
-  "Express",
+  "Supabase",
 ];
 
 export const name = "Shreyas Nagaraja";
@@ -29,7 +45,7 @@ export const collage =
   export const profilePhoto = shreyasPhoto;
 
   export const resume =
-  "https://drive.google.com/file/d/1ea481adLfFlJGPaHzV8FapbknrngB6Ou/view?usp=sharing";
+  "https://drive.google.com/file/d/1QbHtuqlKZNWOqnxeUVrrt6kCsVJX6RXl/view?usp=sharing";
 
   export const sectionTexts = {
     projectSection:{
@@ -40,12 +56,12 @@ export const collage =
     areaOfInterestSection:{
       btnText: 'Loops',
       title: 'Area of Interest',
-      description: 'Delivering innovative, results-driven solutions that elevate your brand and business.'
+      description: 'Delivering innovative, results-driven solutions.'
     },
     powerfulToolsSection:{
       btnText: 'Toolkit',
       title: 'Powerful Tools,',
-      description: 'Tools for Design, System Dynamics and More.'
+      description: 'Tools for Design, Development and more.'
     },
     contactSection:{
       btnText: 'Contact',
@@ -53,7 +69,7 @@ export const collage =
       description: "Let's Connect",
       mobileNumber: '+91 8317449363',
       gMail: 'nshreyas1309@gmail.com',
-      copyRights: '2024, Rights Reserved'
+      copyRights: '2025, Rights Reserved'
     }
   }
 
@@ -66,7 +82,7 @@ export const NAV_BAR_ITEM = {
       TITLE: "Resume",
       IS_ACTIVE: true,
       REDIRECT:
-        "https://drive.google.com/file/d/1ea481adLfFlJGPaHzV8FapbknrngB6Ou/view?usp=sharing",
+        "https://drive.google.com/file/d/1QbHtuqlKZNWOqnxeUVrrt6kCsVJX6RXl/view?usp=sharing",
     },
     {
       ICON: {
@@ -102,52 +118,47 @@ export const NAV_BAR_ITEM = {
 export const projectImage = {
   image: [
     {
-      title: "pro1",
-      URL: demoProjectImage,
+      title: "ToboGrade Ai - Automated Tobacco Leaf Grading System",
+      URL: tobaccoAiCover,
     },
     {
-      title: "pro2",
-      URL: demoProjectImage,
+      title: "Personal Portfolio Website",
+      URL: portfolioCover,
     },
     {
-      title: "pro3",
-      URL: demoProjectImage,
+      title: "PingMe",
+      URL: pingmeCover,
     },
     {
-      title: "pro4",
-      URL: demoProjectImage,
+      title: "Ai Whiteboard",
+      URL: aiwhiteboardCover,
     },
     {
-      title: "pro5",
-      URL: demoProjectImage,
-    },
-    {
-      title: "pro6",
-      URL: demoProjectImage,
-    },
-  ],
+      title: "AURA virtual Assistent",
+      URL: auraCover,
+    }
+  ]
 };
 
 export const ProjectInfo = {
   projects: [
     {
       id: "project-1",
-      title: "Project_title",
-      caption: "Design Thinking, Experience Design",
-      coverImage: demoProjectImage, // thumbnail for card
+      title: "ToboGrade Ai",
+      caption: "Automated Tobacco Leaf Grading System",
+      coverImage: tobaccoAiCover, // thumbnail for card
       images: [
         demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,
       ],
-      description: "This is a detailed explanation of Project 1...",
       placeAndAffiliation: 'NIFT Gandhinagar',
       field: 'Designin Innovation Method',
       time: '4-Months'
     },
     {
       id: "project-2",
-      title: "Project 2",
+      title: "Personal Portfolio Website",
       caption: "UI/UX Exploration",
-      coverImage: demoProjectImage,
+      coverImage: portfolioCover,
       images: [
        demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,
       ],
@@ -158,9 +169,9 @@ export const ProjectInfo = {
     },
     {
       id: "project-3",
-      title: "Project 3",
+      title: "PingMe",
       caption: "Design Thinking, Experience Design",
-      coverImage: demoProjectImage, // thumbnail for card
+      coverImage: pingmeCover, // thumbnail for card
       images: [
         demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,
       ],
@@ -171,9 +182,9 @@ export const ProjectInfo = {
     },
     {
       id: "project-4",
-      title: "Project 4",
+      title: "Ai Whiteboard",
       caption: "UI/UX Exploration",
-      coverImage: demoProjectImage,
+      coverImage: aiwhiteboardCover,
       images: [
        demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,
       ],
@@ -184,9 +195,9 @@ export const ProjectInfo = {
     },
     {
       id: "project-5",
-      title: "Project 5",
+      title: "AURA virtual Assistent",
       caption: "Design Thinking, Experience Design",
-      coverImage: demoProjectImage, // thumbnail for card
+      coverImage: auraCover, // thumbnail for card
       images: [
         demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,
       ],
@@ -194,33 +205,7 @@ export const ProjectInfo = {
       placeAndAffiliation: 'NIFT Gandhinagar',
       field: 'Designin Innovation Method',
       time: '4-Months'
-    },
-    {
-      id: "project-6",
-      title: "Project 6",
-      caption: "UI/UX Exploration",
-      coverImage: demoProjectImage,
-      images: [
-       demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,
-      ],
-      description: "This is a detailed explanation of Project 6...",
-      placeAndAffiliation: 'NIFT Gandhinagar',
-      field: 'Designin Innovation Method',
-      time: '4-Months'
-    },
-    {
-      id: "project-7",
-      title: "Project 7",
-      caption: "UI/UX Exploration",
-      coverImage: demoProjectImage,
-      images: [
-       demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,
-      ],
-      description: "This is a detailed explanation of Project 7...",
-      placeAndAffiliation: 'NIFT Gandhinagar',
-      field: 'Designin Innovation Method',
-      time: '4-Months'
-    },
+    }
   ],
 };
 
@@ -282,40 +267,64 @@ export const arearOfInterest = [
 ];
 export const tools = [
   {
-    title: 'Figma',
+    title: 'ReactJs',
     caption:'Designin intuitive with seamless collaborati ',
-    URL: demoProjectImage,
+    URL: reactjs,
     percentage: 95
   },
   {
-    title: 'Figma',
+    title: 'React Native',
     caption:'Designin intuitive with seamless collaborati ',
-    URL: demoProjectImage,
+    URL: reactnative,
     percentage: 80
   },
   {
-    title: 'Figma',
+    title: 'TailwindCSS',
     caption:'Designin intuitive with seamless collaborati ',
-    URL: demoProjectImage,
+    URL: tailwind,
     percentage: 75
   },
   {
-    title: 'Figma',
+    title: 'Supabase',
     caption:'Designin intuitive with seamless collaborati ',
-    URL: demoProjectImage,
+    URL: supabase,
     percentage: 75
   },
   {
-    title: 'Figma',
+    title: 'Firebase',
     caption:'Designin intuitive with seamless collaborati ',
-    URL: demoProjectImage,
-    percentage: 65
+    URL: firebase,
+    percentage: 75
+  },
+  {
+    title: 'TypeScript',
+    caption:'Designin intuitive with seamless collaborati ',
+    URL: ts,
+    percentage: 70
+  },
+  {
+    title: 'JavaScript',
+    caption:'Designin intuitive with seamless collaborati ',
+    URL: js,
+    percentage: 80
+  },
+  {
+    title: 'Git',
+    caption:'Designin intuitive with seamless collaborati ',
+    URL: git,
+    percentage: 85
   },
   {
     title: 'Figma',
     caption:'Designin intuitive with seamless collaborati ',
-    URL: demoProjectImage,
-    percentage: 60
+    URL: figma,
+    percentage: 70
+  },
+  {
+    title: 'Canva',
+    caption:'Designin intuitive with seamless collaborati ',
+    URL: canva,
+    percentage: 90
   },
 ]
 

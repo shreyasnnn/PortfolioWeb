@@ -95,19 +95,22 @@ export const HomeScreen = () => {
       {/* Project Scroll Images */}
       <FadeInOnScroll delayMs={100}>
         <div className="mt-12 md:mt-25 mx-auto overflow-hidden px-4">
-          <div className="flex space-x-3 sm:space-x-4 w-max animate-scroll no-scrollbar">
-            {projectImage.image.map((item, index) => (
-              <div
-                key={index}
-                className="p-3 sm:p-4 md:p-5 rounded-xl md:rounded-2xl"
-              >
-                <img
-                  src={item.URL}
-                  alt={item.title}
-                  className="rounded-xl md:rounded-2xl w-full h-auto max-w-[200px] sm:max-w-none"
-                />
-              </div>
-            ))}
+          <div className="flex w-max animate-scroll no-scrollbar space-x-10">
+            {/* Duplicate images for seamless rotation */}
+            {[...projectImage.image, ...projectImage.image].map(
+              (item, index) => (
+                <div
+                  key={index}
+                  className="p-0 rounded-xl md:rounded-2xl flex-shrink-0"
+                >
+                  <img
+                    src={item.URL}
+                    alt={item.title}
+                    className="rounded-xl md:rounded-2xl w-[350px] sm:w-[450px] md:w-[500px] lg:w-[550px] h-96 object-cover"
+                  />
+                </div>
+              )
+            )}
           </div>
         </div>
       </FadeInOnScroll>
