@@ -5,7 +5,7 @@ import emailIcon from "../assets/svg/email.svg";
 import phoneIcon from "../assets/svg/phonecallIcon.svg";
 import demoProjectImage from "../assets/images/DemoProject.jpg";
 import tobaccoAiCover from "../assets/images/tobaccoAi/cover.png"
-import portfolioCover from "../assets/images/Portfolio/cover.png"
+import portfolioCover from "../assets/images/portfolio/cover.png"
 import pingmeCover from "../assets/images/PingMe/cover.png"
 import auraCover from "../assets/images/aura/cover.png"
 import aiwhiteboardCover from "../assets/images/aiwhiteboard/cover.png"
