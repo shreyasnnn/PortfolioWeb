@@ -157,6 +157,7 @@ const Folder: React.FC<FolderProps> = ({
                 {src && (
                   <img
                     src={src}
+                    loading="lazy"
                     alt={`paper-${i}`}
                     className="w-full h-full object-cover max-w-full max-h-full rounded-md"
                   />

@@ -21,7 +21,7 @@ import ToolkitIcon from "../../assets/icons/toolkitIcon";
 import FadeInOnScroll from "../../assets/UI/fadeInScroll";
 import { sectionTexts } from "../../dataController/index";
 
-export const HomeScreen = () => {
+export default function HomeScreen (){
   const Home = useRef<HTMLElement>(null);
   const About = useRef<HTMLElement>(null);
   const Projects = useRef<HTMLElement>(null);
@@ -80,7 +80,7 @@ export const HomeScreen = () => {
         <div className="mt-8 md:mt-10 flex items-center justify-center w-full px-4">
           <Button
             onClick={() => scrollToSection(Projects)}
-            className="hover:scale-105 cursor-pointer relative rounded-3xl text-body-s font-sans font-use-semibold px-6 sm:px-8 md:px-10 py-2 sm:py-3 overflow-hidden group"
+            className=" hover:scale-105 cursor-pointer relative rounded-3xl text-body-s font-sans font-use-semibold px-6 sm:px-8 md:px-10 py-2 sm:py-3 overflow-hidden group"
           >
             <span className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 opacity-100 group-hover:opacity-0">
               Projects
@@ -123,7 +123,7 @@ export const HomeScreen = () => {
         >
           <Button
             variant="primary"
-            className="rounded-full text-body-xs font-sans font-use-medium"
+            className="px-6 py-2 rounded-full text-body-xs font-sans font-use-medium"
           >
             {sectionTexts.projectSection.btnText}
           </Button>
@@ -179,7 +179,7 @@ export const HomeScreen = () => {
         <div className="flex items-center justify-center mt-16 md:mt-30 px-4">
           <Button
             variant="primary"
-            className="rounded-full text-body-xs font-sans font-use-medium"
+            className="px-6 py-2 rounded-full text-body-xs font-sans font-use-medium"
           >
             {sectionTexts.areaOfInterestSection.btnText}
           </Button>
@@ -205,14 +205,14 @@ export const HomeScreen = () => {
             {arearOfInterest.map((item, idx) => (
               <div
                 key={idx}
-                className="bg-use-grey-200 rounded-3xl mx-4 shadow-md flex justify-center items-center"
+                className="bg-use-grey-100 rounded-3xl mx-4 shadow-md flex justify-center items-center"
                 style={{ padding: `${item.size * 50}px` }}
               >
                 <Folder
                   title={item.title}
                   src={item.src}
                   size={item.size ?? 1}
-                  color="useGrey-100"
+                  color="useGrey-200"
                 />
               </div>
             ))}
@@ -228,7 +228,7 @@ export const HomeScreen = () => {
         >
           <Button
             variant="primary"
-            className="rounded-full text-body-xs font-sans font-use-medium"
+            className="px-6 py-2 rounded-full text-body-xs font-sans font-use-medium"
           >
             {sectionTexts.powerfulToolsSection.btnText}
           </Button>
@@ -270,7 +270,7 @@ export const HomeScreen = () => {
       <Menu scrollToSection={scrollToSection} items={MenuItems}>
         <Button
           onClick={() => scrollToSection(Projects)}
-          className="hover:scale-105 cursor-pointer rounded-4xl md:rounded-4xl text-title-xs font-heading font-use-medium"
+          className="px-6 py-2 hover:scale-105 cursor-pointer rounded-4xl md:rounded-4xl text-title-xs font-heading font-use-medium"
         >
           Projects
         </Button>

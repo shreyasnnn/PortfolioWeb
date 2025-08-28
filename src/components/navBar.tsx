@@ -20,9 +20,9 @@ export default function NavBar() {
       <div className="flex flex-wrap flex-col lg:flex-row gap-6 items-center">
         <Button
           variant="secondary"
-          className="rounded-full p-0 shadow-card h-20 w-20"
+          className="rounded-full shadow-card h-25 w-25 p-2"
         >
-          <img src={profilePhoto} className="rounded-full" />
+          <img loading="lazy" src={profilePhoto} className="rounded-full h-full w-full object-cover" />
         </Button>
 
         <a
@@ -59,13 +59,14 @@ export default function NavBar() {
                 variant="secondary"
                 className={`${
                   button.TITLE && "mx-6"
-                } rounded-xl h-14 min-w-12 shadow-card border-0 cursor-pointer transition duration-200 ease-in-out hover:-translate-y-1`}
+                } px-6 py-2 rounded-xl h-14 min-w-12 shadow-card border-0 cursor-pointer transition duration-200 ease-in-out hover:-translate-y-1`}
                 onClick={() => handleClick(button.REDIRECT)}
               >
                 <div className="flex">
                   {button.IS_ACTIVE && <div>🟢</div>}
                   {button.ICON && (
                     <img
+                    loading="lazy"
                       className="h-5"
                       src={button.ICON.URL}
                       alt={button.ICON.ALT}

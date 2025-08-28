@@ -136,6 +136,7 @@ export default function ContactSection() {
                         {button.IS_ACTIVE && <div className="mr-1">🟢</div>}
                         {button.ICON && (
                           <img
+                            loading="lazy"
                             className="h-4 sm:h-5"
                             src={button.ICON.URL}
                             alt={button.ICON.ALT}

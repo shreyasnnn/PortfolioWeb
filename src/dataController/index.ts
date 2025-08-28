@@ -19,6 +19,24 @@ import ts from "../assets/images/tools/ts.png"
 import tailwind from "../assets/images/tools/tailwind.png"
 import supabase from "../assets/images/tools/supabase.jpg"
 import firebase from "../assets/images/tools/firebase.png"
+import web2 from "../assets/images/areaOfInterest/web/web2.jpg"
+
+import app2 from "../assets/images/areaOfInterest/app/app2.jpg"
+
+import ml2 from "../assets/images/areaOfInterest/ML/ml2.jpg"
+
+import ba2 from "../assets/images/areaOfInterest/ba/ba2.jpg"
+
+import ui2 from "../assets/images/areaOfInterest/ui/ui2.jpg"
+
+import cricket from "../assets/images/areaOfInterest/sports/cricket.jpg"
+import badminton from "../assets/images/areaOfInterest/sports/badminton.jpg"
+import tt from "../assets/images/areaOfInterest/sports/tt.jpg"
+
+// import dr1 from "../assets/images/areaOfInterest/drawing/dr1.jpg"
+// import dr2 from "../assets/images/areaOfInterest/drawing/dr2.jpg"
+// import dr3 from "../assets/images/areaOfInterest/drawing/dr3.jpg"
+
 
 
 export const webData = {
@@ -61,7 +79,7 @@ export const collage =
     powerfulToolsSection:{
       btnText: 'Toolkit',
       title: 'Powerful Tools,',
-      description: 'Tools for Design, Development and more.'
+      description: 'Technologies for Design, Analysis, and Development.'
     },
     contactSection:{
       btnText: 'Contact',
@@ -103,14 +121,14 @@ export const NAV_BAR_ITEM = {
         URL: emailIcon,
         ALT: "Email",
       },
-      REDIRECT: "",
+      REDIRECT: "mailto:shreyasnagaraja@example.com",
     },
     {
       ICON: {
         URL: phoneIcon,
         ALT: "Phone",
       },
-      REDIRECT: "",
+      REDIRECT: "tel:+918317449363",
     },
   ],
 };
@@ -145,125 +163,134 @@ export const ProjectInfo = {
     {
       id: "project-1",
       title: "ToboGrade Ai",
-      caption: "Automated Tobacco Leaf Grading System",
+      caption: "AI-powered system for grading tobacco leaves efficiently",
       coverImage: tobaccoAiCover, // thumbnail for card
       images: [
         demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,
       ],
-      placeAndAffiliation: 'NIFT Gandhinagar',
-      field: 'Designin Innovation Method',
+      placeAndAffiliation: 'MIT Mysore, Major Project',
+      field: 'Machine Learning in Agriculture',
       time: '4-Months'
     },
     {
       id: "project-2",
       title: "Personal Portfolio Website",
-      caption: "UI/UX Exploration",
+      caption: "Showcasing UI/UX skills and frontend development",
       coverImage: portfolioCover,
       images: [
        demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,
       ],
       description: "This is a detailed explanation of Project 2...",
-      placeAndAffiliation: 'NIFT Gandhinagar',
-      field: 'Designin Innovation Method',
-      time: '4-Months'
+      placeAndAffiliation: 'Mysore, Personal Project',
+      field: 'Frontend Engineering & Interaction Design"',
+      time: '1-Month'
     },
     {
       id: "project-3",
       title: "PingMe",
-      caption: "Design Thinking, Experience Design",
+      caption: "Real-time chat application with online presence and file sharing",
       coverImage: pingmeCover, // thumbnail for card
       images: [
         demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,
       ],
       description: "This is a detailed explanation of Project 3...",
-      placeAndAffiliation: 'NIFT Gandhinagar',
-      field: 'Designin Innovation Method',
-      time: '4-Months'
+      placeAndAffiliation: 'Mysore, Personal Project',
+      field: 'Full-stack Mobile App Development',
+      time: '2-Months'
     },
     {
       id: "project-4",
       title: "Ai Whiteboard",
-      caption: "UI/UX Exploration",
+      caption: "Intelligent whiteboard for simple and complex mathematical problems",
       coverImage: aiwhiteboardCover,
       images: [
        demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,
       ],
       description: "This is a detailed explanation of Project 42...",
-      placeAndAffiliation: 'NIFT Gandhinagar',
-      field: 'Designin Innovation Method',
-      time: '4-Months'
+      placeAndAffiliation: 'MIT Mysore, Mini Project',
+      field: 'Gemini-API Integration',
+      time: '1-Months'
     },
     {
       id: "project-5",
       title: "AURA virtual Assistent",
-      caption: "Design Thinking, Experience Design",
+      caption: "Intelligent assistant for simple user's google search",
       coverImage: auraCover, // thumbnail for card
       images: [
         demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,
       ],
       description: "This is a detailed explanation of Project 5...",
-      placeAndAffiliation: 'NIFT Gandhinagar',
-      field: 'Designin Innovation Method',
-      time: '4-Months'
+      placeAndAffiliation: 'Mysore, Personal Project',
+      field: 'JavaScript Project',
+      time: '1-Months'
     }
   ],
 };
 
 export const arearOfInterest = [
   {
-    title: "System Dynamics",
+    title: "Web Development",
     src: {
       first: demoProjectImage,
       second: demoProjectImage,
-      third: demoProjectImage,
+      third: web2,
     },
     size: 2,
   },
   {
-    title: "System Dynamics",
+    title: "App Development",
     src: {
       first: demoProjectImage,
       second: demoProjectImage,
-      third: demoProjectImage,
+      third: app2,
     },
     size: 2,
   },
   {
-    title: "System Dynamics",
+    title: "Machine Learning",
     src: {
       first: demoProjectImage,
       second: demoProjectImage,
-      third: demoProjectImage,
+      third: ml2,
     },
     size: 2,
   },
   {
-    title: "System Dynamics",
+    title: "Backend Development",
     src: {
       first: demoProjectImage,
       second: demoProjectImage,
-      third: demoProjectImage,
+      third: ba2,
     },
     size: 2,
   },
   {
-    title: "System Dynamics",
+    title: "UI/UX Design",
     src: {
       first: demoProjectImage,
       second: demoProjectImage,
-      third: demoProjectImage,
+      third: ui2,
     },
     size: 2,
   },
+  // {
+  //   title: "Sketching & Drawings",
+  //   src: {
+  //     first: dr1,
+  //     second: dr2,
+  //     third: dr3,
+  //   },
+  //   size: 2,
+  // },
   {
-    title: "System Dynamics",
+    title: "Sports",
     src: {
-      first: demoProjectImage,
-      second: demoProjectImage,
-      third: demoProjectImage,
+      first: cricket,
+      second: badminton,
+      third: tt,
     },
     size: 2,
-  }, 
+  }
 ];
 export const tools = [
   {
@@ -328,20 +355,26 @@ export const tools = [
   },
 ]
 
-export const projectsDetails = [
-  {
-    URL: emailIcon,
-    title: 'Place and Affiliateion',
-    Content: 'NAMTECH, Gandhinagar, Panipath',
-  },
-  {
-    URL: emailIcon,
-    title: 'Field',
-    Content: 'Textile Recycle System',
-  },
-  {
-    URL: emailIcon,
-    title: 'Time',
-    Content: '5-Months',
-  },
-];
+export const getProjectDetails = (project: {
+  placeAndAffiliation: string;
+  field: string;
+  time: string;
+}) => {
+  return [
+    {
+      URL: emailIcon,
+      title: "Place and Affiliation",
+      Content: project.placeAndAffiliation,
+    },
+    {
+      URL: emailIcon,
+      title: "Field",
+      Content: project.field,
+    },
+    {
+      URL: emailIcon,
+      title: "Time",
+      Content: project.time,
+    },
+  ];
+};

@@ -1,14 +1,24 @@
 import { Routes, Route } from "react-router-dom";
-import { HomeScreen } from "./screens/homeScreen";
-import ProjectsDetails from "./screens/projectScreen/index"
+import { lazy, Suspense } from "react";
+const HomeScreen = lazy(() => import("./screens/homeScreen"));
+const ProjectsDetails = lazy(() => import("./screens/projectScreen/index"));
+const BackgroundSilk = lazy(() => import("./components/backgrounds/backgroundSilk"))
 const AppRouter = () => {
   return (
-    <Routes>
-      <Route path="/" element={<HomeScreen />} />
-      <Route path="/project/:id/:title" element={<ProjectsDetails />} />
-      <Route path="*" element={<div>Page Not Found</div>} />
-    </Routes>
+    <div className="relative min-h-screen">
+  <BackgroundSilk/>
+  <div className="relative z-10">
+    <Suspense>
+      <Routes>
+        <Route path="/" element={<HomeScreen />} />
+        <Route path="/project/:id/:title" element={<ProjectsDetails />} />
+        <Route path="*" element={<div>Page Not Found</div>} />
+      </Routes>
+    </Suspense>
+  </div>
+</div>
+    
   );
 };
 
-export default AppRouter;
+export default AppRouter;
