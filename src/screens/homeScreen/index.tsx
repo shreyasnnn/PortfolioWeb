@@ -11,7 +11,7 @@ import {
   tools,
 } from "../../dataController/index";
 import ProjectCard from "../../components/projectCard/projectCard";
-import Folder from "../../components/folder/Folder";
+import Folder from "../../components/Folder/Folder";
 import Footer from "../../components/footer/footer";
 import Menu from "../../components/menu/menu";
 import HomeIcon from "../../assets/icons/homeIcon";
