@@ -22,7 +22,7 @@ export default function NavBar() {
           variant="secondary"
           className="rounded-full shadow-card h-25 w-25 p-2"
         >
-          <img loading="lazy" src={profilePhoto} className="rounded-full h-full w-full object-cover" />
+          <img src={profilePhoto} className="rounded-full h-full w-full object-cover" />
         </Button>
 
         <a

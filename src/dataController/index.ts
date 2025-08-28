@@ -1,37 +1,37 @@
-import shreyasPhoto from "../assets/images/Passport-size-photo-shreyas.jpg";
+import shreyasPhoto from "../assets/images/Passport-size-photo-shreyas.webp";
 import linkedinIcon from "../assets/svg/linkedinIcon.svg";
 import githubIcon from "../assets/svg/githubIcon.svg";
 import emailIcon from "../assets/svg/email.svg";
 import phoneIcon from "../assets/svg/phonecallIcon.svg";
-import demoProjectImage from "../assets/images/DemoProject.jpg";
-import tobaccoAiCover from "../assets/images/tobaccoAi/cover.png"
-import portfolioCover from "../assets/images/portfolio/cover.png"
-import pingmeCover from "../assets/images/pingme/cover.png"
-import auraCover from "../assets/images/aura/cover.png"
-import aiwhiteboardCover from "../assets/images/aiwhiteboard/cover.png"
-import canva from "../assets/images/tools/canva.png"
-import figma from "../assets/images/tools/figma.png"
-import git from "../assets/images/tools/git.png"
-import reactjs from "../assets/images/tools/reactjs.png"
-import reactnative from "../assets/images/tools/reactnative.png"
-import js from "../assets/images/tools/js.png"
-import ts from "../assets/images/tools/ts.png"
-import tailwind from "../assets/images/tools/tailwind.png"
-import supabase from "../assets/images/tools/supabase.jpg"
-import firebase from "../assets/images/tools/firebase.png"
-import web2 from "../assets/images/areaOfInterest/web/web2.jpg"
+import demoProjectImage from "../assets/images/DemoProject.webp";
+import tobaccoAiCover from "../assets/images/tobaccoAi/cover.webp"
+import portfolioCover from "../assets/images/portfolio/cover.webp"
+import pingmeCover from "../assets/images/pingme/cover.webp"
+import auraCover from "../assets/images/aura/cover.webp"
+import aiwhiteboardCover from "../assets/images/aiwhiteboard/cover.webp"
+import canva from "../assets/images/tools/canva.webp"
+import figma from "../assets/images/tools/figma.webp"
+import git from "../assets/images/tools/git.webp"
+import reactjs from "../assets/images/tools/reactjs.webp"
+import reactnative from "../assets/images/tools/reactnative.webp"
+import js from "../assets/images/tools/js.webp"
+import ts from "../assets/images/tools/ts.webp"
+import tailwind from "../assets/images/tools/tailwind.webp"
+import supabase from "../assets/images/tools/supabase.webp"
+import firebase from "../assets/images/tools/firebase.webp"
+import web2 from "../assets/images/areaOfInterest/web/web2.webp"
 
-import app2 from "../assets/images/areaOfInterest/app/app2.jpg"
+import app2 from "../assets/images/areaOfInterest/app/app2.webp"
 
-import ml2 from "../assets/images/areaOfInterest/ML/ml2.jpg"
+import ml2 from "../assets/images/areaOfInterest/ML/ml2.webp"
 
-import ba2 from "../assets/images/areaOfInterest/ba/ba2.jpg"
+import ba2 from "../assets/images/areaOfInterest/ba/ba2.webp"
 
-import ui2 from "../assets/images/areaOfInterest/ui/ui2.jpg"
+import ui2 from "../assets/images/areaOfInterest/ui/ui2.webp"
 
-import cricket from "../assets/images/areaOfInterest/sports/cricket.jpg"
-import badminton from "../assets/images/areaOfInterest/sports/badminton.jpg"
-import tt from "../assets/images/areaOfInterest/sports/tt.jpg"
+import cricket from "../assets/images/areaOfInterest/sports/cricket.webp"
+import badminton from "../assets/images/areaOfInterest/sports/badminton.webp"
+import tt from "../assets/images/areaOfInterest/sports/tt.webp"
 
 // import dr1 from "../assets/images/areaOfInterest/drawing/dr1.jpg"
 // import dr2 from "../assets/images/areaOfInterest/drawing/dr2.jpg"

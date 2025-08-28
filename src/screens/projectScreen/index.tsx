@@ -27,7 +27,7 @@ export default function ProjectsDetails() {
       <div className="flex flex-col lg:px-[21%]">
         {/* Back Button */}
         <div className="fixed top-1 left-1 z-10">
-          <Link to={"/"}>
+          <Link rel="preload" to={"/"}>
             <Button className="bg-use-grey-100 px-6 py-2 rounded-3xl m-3 border-0 border-use-grey-200">
               <ArrowLeft color="black" />
             </Button>

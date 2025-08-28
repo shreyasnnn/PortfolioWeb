@@ -19,7 +19,7 @@ export default function ProjectCard({
     <div className="group bg-use-grey-200 rounded-4xl shadow-card overflow-hidden flex flex-col justify-between">
       {/* Image Section with spacing at the top */}
       <div className="relative w-full h-64 px-4 pt-10 pb-4">
-        <Link to={`/project/${id}/${title}`}>
+        <Link rel="preload" to={`/project/${id}/${title}`}>
           <img
             src={src}
             alt={title}
@@ -34,7 +34,7 @@ export default function ProjectCard({
         <p className="text-title-xs font-semibold">{title}</p>
         <p>{subtitle}</p>
         <div className="mt-4">
-          <Link to={`/project/${id}/${title}`}>
+          <Link rel="preload" to={`/project/${id}/${title}`}>
             <Button className="px-6 py-2 group hover:scale-105 rounded-full">
               View Project{" "}
               <ArrowRightIcon className="transition-all duration-300 ease-out group-hover:translate-x-2" />
