@@ -63,7 +63,7 @@ export const collage =
   export const profilePhoto = shreyasPhoto;
 
   export const resume =
-  "https://drive.google.com/file/d/1QbHtuqlKZNWOqnxeUVrrt6kCsVJX6RXl/view?usp=sharing";
+  "https://drive.google.com/file/d/11ugP2wH2SYijMS0iKuj2Wgurvl5wldeI/view?usp=sharing";
 
   export const sectionTexts = {
     projectSection:{
