@@ -51,7 +51,7 @@ export default function ContactSection() {
               <Button
                 variant="primary"
                 aria-label={sectionTexts.contactSection.btnText}
-                className="text-body-xs sm:text-body-s rounded-2xl md:rounded-3xl mt-3 sm:mt-6 md:mt-8"
+                className="text-body-xs sm:text-body-s rounded-2xl md:rounded-3xl mt-3 sm:mt-6 md:mt-8 px-6 py-2"
               >
                 {sectionTexts.contactSection.btnText}
               </Button>
