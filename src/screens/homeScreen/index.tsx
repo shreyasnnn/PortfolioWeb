@@ -21,7 +21,7 @@ import ToolkitIcon from "../../assets/icons/toolkitIcon";
 import FadeInOnScroll from "../../assets/UI/fadeInScroll";
 import { sectionTexts } from "../../dataController/index";
 
-export default function HomeScreen (){
+export default function HomeScreen() {
   const Home = useRef<HTMLElement>(null);
   const About = useRef<HTMLElement>(null);
   const Projects = useRef<HTMLElement>(null);
@@ -80,6 +80,7 @@ export default function HomeScreen (){
         <div className="mt-8 md:mt-10 flex items-center justify-center w-full px-4">
           <Button
             onClick={() => scrollToSection(Projects)}
+            aria-label="Scroll to Projects section"
             className=" hover:scale-105 cursor-pointer relative rounded-3xl text-body-s font-sans font-use-semibold px-6 sm:px-8 md:px-10 py-2 sm:py-3 overflow-hidden group"
           >
             <span className="absolute inset-0 flex items-center justify-center transition-opacity duration-300 opacity-100 group-hover:opacity-0">
@@ -96,7 +97,6 @@ export default function HomeScreen (){
       <FadeInOnScroll delayMs={100}>
         <div className="mt-12 md:mt-25 mx-auto overflow-hidden px-4">
           <div className="flex w-max animate-scroll no-scrollbar space-x-10">
-            {/* Duplicate images for seamless rotation */}
             {[...projectImage.image, ...projectImage.image].map(
               (item, index) => (
                 <div
@@ -105,7 +105,7 @@ export default function HomeScreen (){
                 >
                   <img
                     src={item.URL}
-                    alt={item.title}
+                    alt={item.title || `Project image ${index + 1}`} // fallback alt text
                     className="rounded-xl md:rounded-2xl w-[350px] sm:w-[450px] md:w-[500px] lg:w-[550px] h-96 object-cover"
                   />
                 </div>
@@ -277,4 +277,4 @@ export default function HomeScreen (){
       </Menu>
     </section>
   );
-};
+}

@@ -25,10 +25,28 @@ export default function ProjectsDetails() {
   return (
     <>
       <div className="flex flex-col lg:px-[21%]">
+        {/* Preview / Visit Banner */}
+        {project.link && (
+          <div className="fixed top-8 left-1/2 transform -translate-x-1/2 z-50">
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Preview ${project.title}`}
+              className="bg-use-grey-200 text-use-grey-900 font-use-medium px-8 py-5 rounded-full shadow-lg hover:bg-gray-100 transition"
+            >
+              🔗 Click here to preview
+            </a>
+          </div>
+        )}
+
         {/* Back Button */}
         <div className="fixed top-1 left-1 z-10">
           <Link rel="preload" to={"/"}>
-            <Button className="bg-use-grey-100 px-6 py-2 rounded-3xl m-3 border-0 border-use-grey-200">
+            <Button
+              aria-label="Go back to Home"
+              className="bg-use-grey-100 px-6 py-2 rounded-3xl m-3 border-0 border-use-grey-200"
+            >
               <ArrowLeft color="black" />
             </Button>
           </Link>
@@ -42,6 +60,7 @@ export default function ProjectsDetails() {
                 <img
                   src={project.coverImage}
                   loading="lazy"
+                  alt={`${project.title} cover`}
                   className={`w-19 h-16 object-cover rounded-full`}
                 />
               </div>
@@ -52,7 +71,12 @@ export default function ProjectsDetails() {
                 <p className="text-title-s font-use-medium">{project.title}</p>
               </div>
             </div>
-            <img loading="lazy" src={project.coverImage} className="rounded-3xl mt-5" />
+            <img
+              loading="lazy"
+              src={project.coverImage}
+              alt={`${project.title} main cover`}
+              className="rounded-3xl mt-5"
+            />
           </div>
         </FadeInScroll>
 
@@ -68,6 +92,7 @@ export default function ProjectsDetails() {
                   <img
                     src={detail.URL}
                     loading="lazy"
+                    alt={detail.title || `Project detail ${index + 1}`}
                     className="h-15 lg:h-20 p-2 rounded-full bg-use-grey-200"
                   />
                 </div>
@@ -96,10 +121,12 @@ export default function ProjectsDetails() {
             <motion.img
               key={imageIndex}
               src={image}
-              alt=""
+              alt={`${project.title} screenshot ${imageIndex + 1}`}
               className={`w-full h-auto object-cover ${
                 imageIndex === 0 ? "rounded-t-4xl" : ""
-              } ${imageIndex === project.images.length - 1 ? "rounded-b-4xl" : ""}`}
+              } ${
+                imageIndex === project.images.length - 1 ? "rounded-b-4xl" : ""
+              }`}
             />
           ))}
         </motion.div>

@@ -4,7 +4,9 @@ import githubIcon from "../assets/svg/githubIcon.svg";
 import emailIcon from "../assets/svg/email.svg";
 import phoneIcon from "../assets/svg/phonecallIcon.svg";
 import demoProjectImage from "../assets/images/DemoProject.webp";
-import tobaccoAiCover from "../assets/images/tobaccoAi/cover.webp"
+import {tobo1, tobo2, tobo3, tobo4,tobo5,tobocover} from "../assets/images/tobaccoAi/index"
+//ppt of tobo
+
 import portfolioCover from "../assets/images/portfolio/cover.webp"
 import pingmeCover from "../assets/images/pingme/cover.webp"
 import auraCover from "../assets/images/aura/cover.webp"
@@ -137,7 +139,7 @@ export const projectImage = {
   image: [
     {
       title: "ToboGrade Ai - Automated Tobacco Leaf Grading System",
-      URL: tobaccoAiCover,
+      URL: tobocover,
     },
     {
       title: "Personal Portfolio Website",
@@ -164,9 +166,10 @@ export const ProjectInfo = {
       id: "project-1",
       title: "ToboGrade Ai",
       caption: "AI-powered system for grading tobacco leaves efficiently",
-      coverImage: tobaccoAiCover, // thumbnail for card
+      link: "https://tobograde-tobacco-grading-system.netlify.app/",
+      coverImage: tobocover, // thumbnail for card
       images: [
-        demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,
+        tobo1, tobo2, tobo3, tobo4, tobo5,
       ],
       placeAndAffiliation: 'MIT Mysore, Major Project',
       field: 'Machine Learning in Agriculture',

@@ -16,10 +16,14 @@ export default function ProjectCard({
   subtitle = "Project description or subtitle should be here",
 }: ProjectCardProps) {
   return (
-    <div className="group bg-use-grey-200 rounded-4xl shadow-card overflow-hidden flex flex-col justify-between">
-      {/* Image Section with spacing at the top */}
+    <div
+      className="group bg-use-grey-200 rounded-4xl shadow-card overflow-hidden flex flex-col justify-between"
+      role="region"
+      aria-label={`Project card: ${title}`}
+    >
+      {/* Image Section */}
       <div className="relative w-full h-64 px-4 pt-10 pb-4">
-        <Link rel="preload" to={`/project/${id}/${title}`}>
+        <Link rel="preload" to={`/project/${id}/${title}`} aria-label={`Open project ${title}`}>
           <img
             src={src}
             alt={title}
@@ -29,15 +33,21 @@ export default function ProjectCard({
         </Link>
       </div>
 
-      {/* White Bottom Section (overlapping slightly if needed) */}
-      <div className=" bg-use-grey-100 px-6 pt-4 pb-6 text-center rounded-[2rem] m-4 z-10 relative shadow-md">
+      {/* Bottom Section */}
+      <div className="bg-use-grey-100 px-6 pt-4 pb-6 text-center rounded-[2rem] m-4 z-10 relative shadow-md">
         <p className="text-title-xs font-semibold">{title}</p>
         <p>{subtitle}</p>
         <div className="mt-4">
-          <Link rel="preload" to={`/project/${id}/${title}`}>
-            <Button className="px-6 py-2 group hover:scale-105 rounded-full">
+          <Link rel="preload" to={`/project/${id}/${title}`} aria-label={`View project ${title}`}>
+            <Button
+              className="px-6 py-2 group hover:scale-105 rounded-full"
+              aria-label={`View project ${title}`}
+            >
               View Project{" "}
-              <ArrowRightIcon className="transition-all duration-300 ease-out group-hover:translate-x-2" />
+              <ArrowRightIcon
+                className="transition-all duration-300 ease-out group-hover:translate-x-2"
+                aria-hidden="true"
+              />
             </Button>
           </Link>
         </div>
