@@ -82,7 +82,7 @@ export function ToolItem({
       <div className="relative z-10 flex items-center justify-between">
         <div className="flex items-center gap-4">
           <div className="bg-white rounded-xl p-2 shadow-sm">
-            <img src={icon} alt={title} className="h-10 w-10 object-contain" />
+            <img src={icon} loading="lazy" alt={title} className="h-10 w-10 object-contain" />
           </div>
           <div className="flex flex-col">
             <span className="text-title-xs font-semibold text-use-grey-100">{title}</span>
