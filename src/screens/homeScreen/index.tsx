@@ -269,6 +269,7 @@ export default function HomeScreen() {
       {/* Bottom-Centered Scroll Menu */}
       <Menu scrollToSection={scrollToSection} items={MenuItems}>
         <Button
+          rel="preload"
           onClick={() => scrollToSection(Projects)}
           className="px-6 py-2 hover:scale-105 cursor-pointer rounded-4xl md:rounded-4xl text-title-xs font-heading font-use-medium"
         >

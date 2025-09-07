@@ -27,9 +27,10 @@ export default function NavBar() {
           aria-label="Profile photo"
         >
           <img
+            rel="preload"
             src={profilePhoto}
             alt="Profile photo"
-            className="rounded-full h-full w-full object-cover"
+            className="rounded-full w-full h-full object-cover"
           />
         </Button>
 
