@@ -1,25 +1,36 @@
-import { useRef, type RefObject } from "react";
+import {
+  useRef,
+  type RefObject,
+  useMemo,
+  useCallback,
+  lazy,
+  Suspense,
+} from "react";
 import { Button } from "../../components/button";
 import NavBar from "../../components/navBar";
+// keep SlideItem eager (tiny), rest lazy where safe
 import { SlideItem } from "../../components/slideItem";
-import { ToolItem } from "../../components/toolItem";
 import {
   skills,
   projectImage,
   ProjectInfo,
   arearOfInterest,
   tools,
+  sectionTexts,
 } from "../../dataController/index";
-import ProjectCard from "../../components/projectCard/projectCard";
-import Folder from "../../components/Folder/Folder";
-import Footer from "../../components/footer/footer";
-import Menu from "../../components/menu/menu";
+
+// Lazy-load heavier, below-the-fold components (no content change)
+const ProjectCard = lazy(() => import("../../components/projectCard/projectCard"));
+const Folder = lazy(() => import("../../components/Folder/Folder"));
+const Footer = lazy(() => import("../../components/footer/footer"));
+const Menu = lazy(() => import("../../components/menu/menu"));
+const ToolItem = lazy(() => import("../../components/toolItem/toolItem"));
+
 import HomeIcon from "../../assets/icons/homeIcon";
 import AboutIcon from "../../assets/icons/aboutIcon";
 import ProjectIcon from "../../assets/icons/projectIcon";
 import ToolkitIcon from "../../assets/icons/toolkitIcon";
 import FadeInOnScroll from "../../assets/UI/fadeInScroll";
-import { sectionTexts } from "../../dataController/index";
 
 export default function HomeScreen() {
   const Home = useRef<HTMLElement>(null);
@@ -27,30 +38,41 @@ export default function HomeScreen() {
   const Projects = useRef<HTMLElement>(null);
   const Toolkit = useRef<HTMLElement>(null);
 
-  const MenuItems = [
-    { label: "Home", ref: Home, logo: <HomeIcon height={25} /> },
-    { label: "About", ref: About, logo: <AboutIcon height={23} /> },
-    { label: "Projects", ref: Projects, logo: <ProjectIcon height={25} /> },
-    { label: "Toolkits", ref: Toolkit, logo: <ToolkitIcon height={25} /> },
-  ];
-
-  const scrollToSection = (ref: RefObject<HTMLElement | null>) => {
+  // stable handler (prevents re-renders of children receiving it)
+  const scrollToSection = useCallback((ref: RefObject<HTMLElement | null>) => {
     if (ref.current) {
       ref.current.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-  };
+  }, []);
+
+  // avoid re-creating doubled array on each render
+  const doubledProjectImages = useMemo(
+    () => [...projectImage.image, ...projectImage.image],
+    [projectImage.image]
+  );
+
+  // avoid recreating the menu items (contains React elements)
+  const MenuItems = useMemo(
+    () => [
+      { label: "Home", ref: Home, logo: <HomeIcon height={25} /> },
+      { label: "About", ref: About, logo: <AboutIcon height={23} /> },
+      { label: "Projects", ref: Projects, logo: <ProjectIcon height={25} /> },
+      { label: "Toolkits", ref: Toolkit, logo: <ToolkitIcon height={25} /> },
+    ],
+    []
+  );
 
   return (
     <section
       ref={Home}
       className="flex flex-col relative w-full overflow-x-hidden"
     >
-      {/* NavBar*/}
+      {/* NavBar (critical, keep eager) */}
       <FadeInOnScroll delayMs={500}>
         <NavBar />
       </FadeInOnScroll>
 
-      {/* Skills Scroll*/}
+      {/* Skills Scroll */}
       <FadeInOnScroll delayMs={700}>
         <div className="mt-6 md:mt-12 lg:mt-25 w-[90%] sm:w-[80%] lg:w-[70%] xl:w-[60%] 2xl:w-[50%] mx-auto overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_20%,black_80%,transparent)]">
           <div className="flex space-x-4 w-max animate-scroll no-scrollbar opacity-50">
@@ -97,20 +119,21 @@ export default function HomeScreen() {
       <FadeInOnScroll delayMs={100}>
         <div className="mt-12 md:mt-25 mx-auto overflow-hidden px-4">
           <div className="flex w-max animate-scroll no-scrollbar space-x-10">
-            {[...projectImage.image, ...projectImage.image].map(
-              (item, index) => (
-                <div
-                  key={index}
-                  className="p-0 rounded-xl md:rounded-2xl flex-shrink-0"
-                >
-                  <img
-                    src={item.URL}
-                    alt={item.title || `Project image ${index + 1}`} // fallback alt text
-                    className="rounded-xl md:rounded-2xl w-[350px] sm:w-[450px] md:w-[500px] lg:w-[550px] h-96 object-cover"
-                  />
-                </div>
-              )
-            )}
+            {doubledProjectImages.map((item, index) => (
+              <div
+                key={`${item.URL}-${index}`}
+                className="p-0 rounded-xl md:rounded-2xl flex-shrink-0"
+              >
+                <img
+                  src={item.URL}
+                  alt={item.title || `Project image ${index + 1}`}
+                  className="rounded-xl md:rounded-2xl w-[350px] sm:w-[450px] md:w-[500px] lg:w-[550px] h-96 object-cover"
+                  loading="lazy"
+                  decoding="async"
+                  sizes="(min-width: 1024px) 550px, (min-width: 768px) 500px, (min-width: 640px) 450px, 350px"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </FadeInOnScroll>
@@ -144,32 +167,34 @@ export default function HomeScreen() {
         </div>
       </FadeInOnScroll>
 
-      {/* Project Cards */}
+      {/* Project Cards (lazy component, same content) */}
       <div className="flex justify-center py-8 md:py-10 px-4">
         <div className="w-full max-w-3xl">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
-            {ProjectInfo.projects.map((project, idx) => {
-              const isOdd = ProjectInfo.projects.length % 2 !== 0;
-              const isLast = idx === ProjectInfo.projects.length - 1;
-              const isLastOdd = isOdd && isLast;
-              return (
-                <div
-                  key={project.title}
-                  className={`w-full ${
-                    isLastOdd ? "sm:col-span-2 flex justify-center" : ""
-                  }`}
-                >
-                  <div className="w-full max-w-md">
-                    <ProjectCard
-                      id={project.id}
-                      src={project.coverImage}
-                      title={project.title}
-                      subtitle={project.caption}
-                    />
+            <Suspense fallback={null}>
+              {ProjectInfo.projects.map((project, idx) => {
+                const isOdd = ProjectInfo.projects.length % 2 !== 0;
+                const isLast = idx === ProjectInfo.projects.length - 1;
+                const isLastOdd = isOdd && isLast;
+                return (
+                  <div
+                    key={project.title}
+                    className={`w-full ${
+                      isLastOdd ? "sm:col-span-2 flex justify-center" : ""
+                    }`}
+                  >
+                    <div className="w-full max-w-md">
+                      <ProjectCard
+                        id={project.id}
+                        src={project.coverImage}
+                        title={project.title}
+                        subtitle={project.caption}
+                      />
+                    </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
+            </Suspense>
           </div>
         </div>
       </div>
@@ -198,24 +223,26 @@ export default function HomeScreen() {
         </div>
       </FadeInOnScroll>
 
-      {/* Area of Interest Grid */}
+      {/* Area of Interest Grid (lazy Folder items) */}
       <FadeInOnScroll delayMs={100}>
         <div className="flex justify-center items-center px-4 py-10">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-4xl w-full">
-            {arearOfInterest.map((item, idx) => (
-              <div
-                key={idx}
-                className="bg-use-grey-100 rounded-3xl mx-4 shadow-md flex justify-center items-center"
-                style={{ padding: `${item.size * 50}px` }}
-              >
-                <Folder
-                  title={item.title}
-                  src={item.src}
-                  size={item.size ?? 1}
-                  color="useGrey-200"
-                />
-              </div>
-            ))}
+            <Suspense fallback={null}>
+              {arearOfInterest.map((item, idx) => (
+                <div
+                  key={`${item.title}-${idx}`}
+                  className="bg-use-grey-100 rounded-3xl mx-4 shadow-md flex justify-center items-center"
+                  style={{ padding: `${item.size * 50}px` }}
+                >
+                  <Folder
+                    title={item.title}
+                    src={item.src}
+                    size={item.size ?? 1}
+                    color="useGrey-200"
+                  />
+                </div>
+              ))}
+            </Suspense>
           </div>
         </div>
       </FadeInOnScroll>
@@ -247,35 +274,41 @@ export default function HomeScreen() {
         </div>
       </FadeInOnScroll>
 
-      {/* Tool Items */}
+      {/* Tool Items (lazy) */}
       <FadeInOnScroll delayMs={100}>
         <div className="flex items-center justify-center flex-col gap-2 mt-8 md:mt-10 px-4 w-full">
-          {tools.map((tool, index) => (
-            <ToolItem
-              key={index}
-              title={tool.title}
-              icon={tool.URL}
-              description={tool.caption}
-              percentage={tool.percentage}
-              speed={1500}
-            />
-          ))}
+          <Suspense fallback={null}>
+            {tools.map((tool, index) => (
+              <ToolItem
+                key={`${tool.title}-${index}`}
+                title={tool.title}
+                icon={tool.URL}
+                description={tool.caption}
+                percentage={tool.percentage}
+                speed={1500}
+              />
+            ))}
+          </Suspense>
         </div>
       </FadeInOnScroll>
 
-      {/* Footer */}
-      <Footer />
+      {/* Footer (lazy) */}
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
 
-      {/* Bottom-Centered Scroll Menu */}
-      <Menu scrollToSection={scrollToSection} items={MenuItems}>
-        <Button
-          rel="preload"
-          onClick={() => scrollToSection(Projects)}
-          className="px-6 py-2 hover:scale-105 cursor-pointer rounded-4xl md:rounded-4xl text-title-xs font-heading font-use-medium"
-        >
-          Projects
-        </Button>
-      </Menu>
+      {/* Bottom-Centered Scroll Menu (lazy) */}
+      <Suspense fallback={null}>
+        <Menu scrollToSection={scrollToSection} items={MenuItems}>
+          <Button
+            rel="preload"
+            onClick={() => scrollToSection(Projects)}
+            className="px-6 py-2 hover:scale-105 cursor-pointer rounded-4xl md:rounded-4xl text-title-xs font-heading font-use-medium"
+          >
+            Projects
+          </Button>
+        </Menu>
+      </Suspense>
     </section>
   );
 }
