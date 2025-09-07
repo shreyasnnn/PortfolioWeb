@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
 import { lazy, Suspense, useEffect, useState } from "react";
 
-const HomeScreen = lazy(() => import("./screens/homeScreen"));
+import HomeScreen from "./screens/homeScreen";
 const ProjectsDetails = lazy(() => import("./screens/projectScreen/index"));
 const BackgroundSilk = lazy(() => import("./components/backgrounds/backgroundSilk"));
 
