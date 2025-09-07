@@ -1,45 +1,4 @@
-import shreyasPhoto from "../assets/images/Passport-size-photo-shreyas.webp";
-import linkedinIcon from "../assets/svg/linkedinIcon.svg";
-import githubIcon from "../assets/svg/githubIcon.svg";
-import emailIcon from "../assets/svg/email.svg";
-import phoneIcon from "../assets/svg/phonecallIcon.svg";
-import demoProjectImage from "../assets/images/DemoProject.webp";
-import {tobo1, tobo2, tobo3, tobo4,tobo5,tobocover} from "../assets/images/tobaccoAi/index"
-//ppt of tobo
-
-import portfolioCover from "../assets/images/portfolio/cover.webp"
-import pingmeCover from "../assets/images/pingme/cover.webp"
-import auraCover from "../assets/images/aura/cover.webp"
-import aiwhiteboardCover from "../assets/images/aiwhiteboard/cover.webp"
-import canva from "../assets/images/tools/canva.webp"
-import figma from "../assets/images/tools/figma.webp"
-import git from "../assets/images/tools/git.webp"
-import reactjs from "../assets/images/tools/reactjs.webp"
-import reactnative from "../assets/images/tools/reactnative.webp"
-import js from "../assets/images/tools/js.webp"
-import ts from "../assets/images/tools/ts.webp"
-import tailwind from "../assets/images/tools/tailwind.webp"
-import supabase from "../assets/images/tools/supabase.webp"
-import firebase from "../assets/images/tools/firebase.webp"
-import web2 from "../assets/images/areaOfInterest/web/web2.webp"
-
-import app2 from "../assets/images/areaOfInterest/app/app2.webp"
-
-import ml2 from "../assets/images/areaOfInterest/ML/ml2.webp"
-
-import ba2 from "../assets/images/areaOfInterest/ba/ba2.webp"
-
-import ui2 from "../assets/images/areaOfInterest/ui/ui2.webp"
-
-import cricket from "../assets/images/areaOfInterest/sports/cricket.webp"
-import badminton from "../assets/images/areaOfInterest/sports/badminton.webp"
-import tt from "../assets/images/areaOfInterest/sports/tt.webp"
-
-// import dr1 from "../assets/images/areaOfInterest/drawing/dr1.jpg"
-// import dr2 from "../assets/images/areaOfInterest/drawing/dr2.jpg"
-// import dr3 from "../assets/images/areaOfInterest/drawing/dr3.jpg"
-
-
+import * as Assets from "../assets";
 
 export const webData = {
   name: "shreyas",
@@ -62,7 +21,7 @@ export const name = "Shreyas Nagaraja";
 export const collage =
   "Engineering student at Maharaja Institute of Technology Mysore";
 
-  export const profilePhoto = shreyasPhoto;
+  export const profilePhoto = Assets.shreyasPhoto;
 
   export const resume =
   "https://drive.google.com/file/d/11ugP2wH2SYijMS0iKuj2Wgurvl5wldeI/view?usp=sharing";
@@ -94,7 +53,7 @@ export const collage =
   }
 
 export const NAV_BAR_ITEM = {
-  PROFILE_IMAGE: shreyasPhoto,
+  PROFILE_IMAGE: Assets.shreyasPhoto,
   TITLE: "Shreyas Nagaraja",
   SUB_TITLE: "Engineering student at Maharaja Institute of Technology Mysore",
   ICON_CONFIG: [
@@ -106,28 +65,28 @@ export const NAV_BAR_ITEM = {
     },
     {
       ICON: {
-        URL: linkedinIcon,
+        URL: Assets.linkedinIcon,
         ALT: "LinkedIn",
       },
       REDIRECT: "https://www.linkedin.com/in/shreyas-n-4837a2257/",
     },
     {
       ICON: {
-        URL: githubIcon,
+        URL: Assets.githubIcon,
         ALT: "GitHub",
       },
       REDIRECT: "https://github.com/shreyasnnn",
     },
     {
       ICON: {
-        URL: emailIcon,
+        URL: Assets.emailIcon,
         ALT: "Email",
       },
       REDIRECT: "mailto:shreyasnagaraja@example.com",
     },
     {
       ICON: {
-        URL: phoneIcon,
+        URL: Assets.phoneIcon,
         ALT: "Phone",
       },
       REDIRECT: "tel:+918317449363",
@@ -139,23 +98,23 @@ export const projectImage = {
   image: [
     {
       title: "ToboGrade Ai - Automated Tobacco Leaf Grading System",
-      URL: tobocover,
+      URL: Assets.tobocover,
     },
     {
       title: "Personal Portfolio Website",
-      URL: portfolioCover,
+      URL: Assets.portfolioCover,
     },
     {
       title: "PingMe",
-      URL: pingmeCover,
+      URL: Assets.pingmeCover,
     },
     {
       title: "Ai Whiteboard",
-      URL: aiwhiteboardCover,
+      URL: Assets.aiwhiteboardCover,
     },
     {
       title: "AURA virtual Assistent",
-      URL: auraCover,
+      URL: Assets.auraCover,
     }
   ]
 };
@@ -167,9 +126,9 @@ export const ProjectInfo = {
       title: "ToboGrade Ai",
       caption: "AI-powered system for grading tobacco leaves efficiently",
       link: "https://tobograde-tobacco-grading-system.netlify.app/",
-      coverImage: tobocover, // thumbnail for card
+      coverImage: Assets.tobocover, // thumbnail for card
       images: [
-        tobo1, tobo2, tobo3, tobo4, tobo5,
+        Assets.tobo1, Assets.tobo2, Assets.tobo3, Assets.tobo4, Assets.tobo5,
       ],
       placeAndAffiliation: 'MIT Mysore, Major Project',
       field: 'Machine Learning in Agriculture',
@@ -179,9 +138,9 @@ export const ProjectInfo = {
       id: "project-2",
       title: "Personal Portfolio Website",
       caption: "Showcasing UI/UX skills and frontend development",
-      coverImage: portfolioCover,
+      coverImage: Assets.portfolioCover,
       images: [
-       demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,
+       Assets.demoProjectImage,Assets.demoProjectImage,Assets.demoProjectImage,Assets.demoProjectImage,Assets.demoProjectImage,
       ],
       description: "This is a detailed explanation of Project 2...",
       placeAndAffiliation: 'Mysore, Personal Project',
@@ -192,9 +151,9 @@ export const ProjectInfo = {
       id: "project-3",
       title: "PingMe",
       caption: "Real-time chat application with online presence and file sharing",
-      coverImage: pingmeCover, // thumbnail for card
+      coverImage: Assets.pingmeCover, // thumbnail for card
       images: [
-        demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,
+        Assets.demoProjectImage,Assets.demoProjectImage,Assets.demoProjectImage,Assets.demoProjectImage,Assets.demoProjectImage,
       ],
       description: "This is a detailed explanation of Project 3...",
       placeAndAffiliation: 'Mysore, Personal Project',
@@ -205,9 +164,9 @@ export const ProjectInfo = {
       id: "project-4",
       title: "Ai Whiteboard",
       caption: "Intelligent whiteboard for simple and complex mathematical problems",
-      coverImage: aiwhiteboardCover,
+      coverImage: Assets.aiwhiteboardCover,
       images: [
-       demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,
+       Assets.demoProjectImage,Assets.demoProjectImage,Assets.demoProjectImage,Assets.demoProjectImage,Assets.demoProjectImage,
       ],
       description: "This is a detailed explanation of Project 42...",
       placeAndAffiliation: 'MIT Mysore, Mini Project',
@@ -218,9 +177,9 @@ export const ProjectInfo = {
       id: "project-5",
       title: "AURA virtual Assistent",
       caption: "Intelligent assistant for simple user's google search",
-      coverImage: auraCover, // thumbnail for card
+      coverImage: Assets.auraCover, // thumbnail for card
       images: [
-        demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,demoProjectImage,
+        Assets.demoProjectImage,Assets.demoProjectImage,Assets.demoProjectImage,Assets.demoProjectImage,Assets.demoProjectImage,
       ],
       description: "This is a detailed explanation of Project 5...",
       placeAndAffiliation: 'Mysore, Personal Project',
@@ -234,45 +193,45 @@ export const arearOfInterest = [
   {
     title: "Web Development",
     src: {
-      first: demoProjectImage,
-      second: demoProjectImage,
-      third: web2,
+      first: Assets.demoProjectImage,
+      second: Assets.demoProjectImage,
+      third: Assets.web2,
     },
     size: 2,
   },
   {
     title: "App Development",
     src: {
-      first: demoProjectImage,
-      second: demoProjectImage,
-      third: app2,
+      first: Assets.demoProjectImage,
+      second: Assets.demoProjectImage,
+      third: Assets.app2,
     },
     size: 2,
   },
   {
     title: "Machine Learning",
     src: {
-      first: demoProjectImage,
-      second: demoProjectImage,
-      third: ml2,
+      first: Assets.demoProjectImage,
+      second: Assets.demoProjectImage,
+      third: Assets.ml2,
     },
     size: 2,
   },
   {
     title: "Backend Development",
     src: {
-      first: demoProjectImage,
-      second: demoProjectImage,
-      third: ba2,
+      first: Assets.demoProjectImage,
+      second: Assets.demoProjectImage,
+      third: Assets.ba2,
     },
     size: 2,
   },
   {
     title: "UI/UX Design",
     src: {
-      first: demoProjectImage,
-      second: demoProjectImage,
-      third: ui2,
+      first: Assets.demoProjectImage,
+      second: Assets.demoProjectImage,
+      third: Assets.ui2,
     },
     size: 2,
   },
@@ -288,9 +247,9 @@ export const arearOfInterest = [
   {
     title: "Sports",
     src: {
-      first: cricket,
-      second: badminton,
-      third: tt,
+      first: Assets.cricket,
+      second: Assets.badminton,
+      third: Assets.tt,
     },
     size: 2,
   }
@@ -299,61 +258,61 @@ export const tools = [
   {
     title: 'ReactJs',
     caption:'Designin intuitive with seamless collaborati ',
-    URL: reactjs,
+    URL: Assets.reactjs,
     percentage: 95
   },
   {
     title: 'React Native',
     caption:'Designin intuitive with seamless collaborati ',
-    URL: reactnative,
+    URL: Assets.reactnative,
     percentage: 80
   },
   {
     title: 'TailwindCSS',
     caption:'Designin intuitive with seamless collaborati ',
-    URL: tailwind,
+    URL: Assets.tailwind,
     percentage: 75
   },
   {
     title: 'Supabase',
     caption:'Designin intuitive with seamless collaborati ',
-    URL: supabase,
+    URL: Assets.supabase,
     percentage: 75
   },
   {
     title: 'Firebase',
     caption:'Designin intuitive with seamless collaborati ',
-    URL: firebase,
+    URL: Assets.firebase,
     percentage: 75
   },
   {
     title: 'TypeScript',
     caption:'Designin intuitive with seamless collaborati ',
-    URL: ts,
+    URL: Assets.ts,
     percentage: 70
   },
   {
     title: 'JavaScript',
     caption:'Designin intuitive with seamless collaborati ',
-    URL: js,
+    URL: Assets.js,
     percentage: 80
   },
   {
     title: 'Git',
     caption:'Designin intuitive with seamless collaborati ',
-    URL: git,
+    URL: Assets.git,
     percentage: 85
   },
   {
     title: 'Figma',
     caption:'Designin intuitive with seamless collaborati ',
-    URL: figma,
+    URL: Assets.figma,
     percentage: 70
   },
   {
     title: 'Canva',
     caption:'Designin intuitive with seamless collaborati ',
-    URL: canva,
+    URL: Assets.canva,
     percentage: 90
   },
 ]
@@ -365,17 +324,17 @@ export const getProjectDetails = (project: {
 }) => {
   return [
     {
-      URL: emailIcon,
+      URL: Assets.emailIcon,
       title: "Place and Affiliation",
       Content: project.placeAndAffiliation,
     },
     {
-      URL: emailIcon,
+      URL: Assets.emailIcon,
       title: "Field",
       Content: project.field,
     },
     {
-      URL: emailIcon,
+      URL: Assets.emailIcon,
       title: "Time",
       Content: project.time,
     },

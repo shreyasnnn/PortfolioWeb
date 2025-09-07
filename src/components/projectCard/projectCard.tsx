@@ -23,7 +23,11 @@ export default function ProjectCard({
     >
       {/* Image Section */}
       <div className="relative w-full h-64 px-4 pt-10 pb-4">
-        <Link rel="preload" to={`/project/${id}/${title}`} aria-label={`Open project ${title}`}>
+        <Link
+          rel="preload"
+          to={`/project/${id}/${title}`}
+          aria-label={`Open project ${title}`}
+        >
           <img
             src={src}
             alt={title}
@@ -38,9 +42,13 @@ export default function ProjectCard({
         <p className="text-title-xs font-semibold">{title}</p>
         <p>{subtitle}</p>
         <div className="mt-4">
-          <Link rel="preload" to={`/project/${id}/${title}`} aria-label={`View project ${title}`}>
+          <Link
+            rel="preload"
+            to={`/project/${id}/${title}`}
+            aria-label={`View project ${title}`}
+          >
             <Button
-              className="px-6 py-2 group hover:scale-105 rounded-full"
+              className="px-6 py-2 group hover:scale-105 rounded-full transition-transform duration-300"
               aria-label={`View project ${title}`}
             >
               View Project{" "}
